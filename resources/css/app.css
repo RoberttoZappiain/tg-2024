@@ -1,3 +1,56 @@
+/* Import Bootstrap CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+/*VARIABLES TG*/
+:root {
+    --tg-color-primary-red: #E10600;
+    --tg-color-seccond-red: #AF231C;
+    --tg-color-gris: #382F2D;
+    --tg-color-black: #25282A;
+    --tg-color-fucsia: #e6005c;
+    --tg-color-rojo-fuerte: #c0392b;
+    --tg-color-rojo-oscuro: #8e0000;
+    --tg-color-gris-marron-oscuro: #6e6259;
+    --tg-color-gris-azul-oscuro: #2c3e50;
+    --tg-color-rojo-brillante: #e74c3c;
+    --tg-color-marron-rojizo-oscuro: #4b0e0e;
+    --tg-color-gris-claro: #bdc3c7;
+    --tg-color-gris-muy-oscuro: #2e2e2e;
+    --color-instagram: #E4405F;
+    --color-whatsapp: #25D366;
+    --color-facebook: #1877F2;
+    --color-youtube: #FF0000;
+    --color-twitter: #1DA1F2;
+    --color-linkedin: #0077B5;
+
+}
+h1{
+    color:var(--tg-color-primary-red);
+}
+.icon {
+    fill: #25282A; /* Color inicial */
+    transition: fill 0.3s; /* Transición suave */
+}
+
+.icon-facebook:hover {
+    fill: var(--color-facebook);
+}
+
+.icon-instagram:hover {
+    fill: var(--color-instagram);
+}
+
+.icon-twitter:hover {
+    fill: var(--color-twitter);
+}
+
+.icon-youtube:hover {
+    fill: var(--color-youtube);
+}
+
+.icon-linkedin:hover {
+    fill: var(--color-linkedin);
+}
+
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Black.otf') format('opentype'),
