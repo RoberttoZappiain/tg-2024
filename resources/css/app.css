@@ -29,8 +29,60 @@ h1{
 .icon {
     fill: #25282A; /* Color inicial */
     transition: fill 0.3s; /* Transición suave */
+    cursor: pointer;
 }
 
+.icons {
+    fill: white; /* Color inicial */
+    transition: fill 0.3s; /* Transición suave */
+}
+.custom-dropdown::after {
+    content: none; /* Esto elimina el icono predeterminado */
+  }
+  
+  .dropdown-icon {
+    width: 16px; /* Ajusta el tamaño del icono según sea necesario */
+    height: 16px;
+    fill: var(--tg-color-rojo-oscuro); /* Color personalizado para el icono */
+    margin-left: 3px; /* Espacio entre el texto y el icono */
+  }
+    
+.bgII{
+    background-color: var(--tg-color-black);
+}
+.text-links{
+    background-color: transparent;
+    color: white;
+    font-weight: normal;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    text-decoration: none;
+}
+.sh-r{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Sombra */
+}
+.text-links:hover{
+    color: var(--tg-color-gris-claro);
+    font-weight: normal;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    text-decoration: none;
+    
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--tg-color-rojo-oscuro); /* Color de fondo cuando el acordeón está activo */
+    box-shadow: 0 0 5px #8e0000; /* Anillo con el color especificado */
+    color: var(--tg-color-gris-claro);
+}
+.accordion-button.collapsed {
+    box-shadow: none; /* Anillo con el color especificado */
+}
 .icon-facebook:hover {
     fill: var(--color-facebook);
 }
@@ -50,7 +102,64 @@ h1{
 .icon-linkedin:hover {
     fill: var(--color-linkedin);
 }
+#navbar-sm, #offcanvasExample{
+    background-color: var(--tg-color-black);
+}
 
+.btn-close {
+    position: relative;
+    width: 2em;
+    height: 2em;
+}
+.accordion-item{
+    color: var(--tg-color-gris-claro);
+}
+.btn-close::before, .btn-close::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 0.1em;
+    background-color: white; /* Cambia el color de las líneas al color blanco */
+    content: '';
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.accordion-button-disabled::after {
+    display: none;
+}
+.accordion-button::after{
+    filter: brightness(0) invert(1); /* Esto cambia el color a blanco */
+}
+.btn-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.btn-contact{
+    background-color: var(--tg-color-rojo-oscuro);
+}
+.list-group-item:hover{
+    cursor: pointer;
+    background-color: var(--tg-color-gris-azul-oscuro);
+}
+/* Estilo del botón cuando se pasa el cursor */
+.btn-contact::after {
+    background-color: #7a0000; /* Color de fondo al pasar el cursor */
+    color: white; /* Mantener el color del texto */
+}
+
+/* Estilo del botón cuando está activo */
+.btn-contact:active {
+    background-color: #8e0000; /* Color de fondo cuando se hace clic */
+    color: white; /* Mantener el color del texto */
+    box-shadow: 0 0 10px #8e0000; /* Anillo con el color especificado */
+}
+
+/* Estilo del botón cuando está enfocado */
+.btn-contact:focus {
+    background-color: #8e0000; /* Color de fondo cuando está enfocado */
+    color: white; /* Mantener el color del texto */
+    outline: none; /* Eliminar el contorno predeterminado del navegador */
+    box-shadow: 0 0 10px #8e0000; /* Anillo con el color especificado */
+}
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Black.otf') format('opentype'),
@@ -237,4 +346,30 @@ h1{
 
 body {
     font-family: 'Proxima Nova', sans-serif;
+}
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #4b0e0e; /* Color of the spinner */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
