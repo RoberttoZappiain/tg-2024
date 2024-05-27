@@ -429,7 +429,7 @@
                                                 data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body">
                                                     <ul class="list-group list-group-flush list-unstyled">
-                                                        <li class="bg-li">Sistemas de Tierra Fisica</li>
+                                                        <li class="bg-li"><a href="{{ route('categories.index') }}">Sistemas de Tierra Fisica</a></li>
                                                         <li>
                                                             <hr class="dropdown-divider mx-1 hr-d">
                                                         </li>

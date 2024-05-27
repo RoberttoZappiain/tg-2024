@@ -18,7 +18,6 @@
     </div>
     <div id="app">
         @include('navbar')
-
     </div>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
