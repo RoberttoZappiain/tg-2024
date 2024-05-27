@@ -43,16 +43,41 @@ h1{
 .custom-dropdown::after {
     content: none; /* Esto elimina el icono predeterminado */
   }
-  
+
   .dropdown-icon {
     width: 16px; /* Ajusta el tamaño del icono según sea necesario */
     height: 16px;
     fill: var(--tg-color-rojo-oscuro); /* Color personalizado para el icono */
     margin-left: 3px; /* Espacio entre el texto y el icono */
   }
-    
+  .accordion-button.no-icon::after {
+    display: none;
+}
+.accordion-button:hover{
+    color: var(--tg-color-primary-red);
+}
+.dropdown-menu{
+    margin: 0px; padding:0px;
+}
 .bgII{
     background-color: var(--tg-color-black);
+}
+.bg-li{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: var(--tg-color-gris-claro);
+    cursor: pointer;
+}
+.bg-li:hover{
+    color: var(--tg-color-primary-red);
+}
+.hr-d{
+    background-color: var(--tg-color-primary-red);
+}
+.border{
+    border-color: var(--tg-color-primary-red) !important;
+    opacity: 0.7;
 }
 .text-links{
     background-color: transparent;
@@ -77,7 +102,7 @@ h1{
     display: block;
     padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
     text-decoration: none;
-    
+
 }
 .accordion-button:not(.collapsed) {
     background-color: var(--tg-color-rojo-oscuro); /* Color de fondo cuando el acordeón está activo */
@@ -127,6 +152,9 @@ h1{
     background-color: white; /* Cambia el color de las líneas al color blanco */
     content: '';
     transform: translate(-50%, -50%) rotate(45deg);
+}
+.bgs{
+    background-color: var(--tg-color-gris-claro) !important;
 }
 .accordion-button-disabled::after {
     display: none;
@@ -377,3 +405,4 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
