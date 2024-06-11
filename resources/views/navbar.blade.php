@@ -209,7 +209,7 @@
 
 
     {{-- NAVBAR LG --}}
-    <div class="d-none d-lg-block">
+    <div class="d-none d-lg-block bg-white">
         <div class="d-flex justify-content-around ">
             <div class="p-2 text-center lh-1 mt-2 mb-1 p-2">
                 <span class="fw-medium">Calle Volcán Vesubio #5145, El Collí Urbano, 45070, Zapopan, Jalisco.</span>

@@ -11,11 +11,15 @@ class CategoryController extends Controller
     {
         // Obtener un registro por categoría
         $tierras_fisicas = DB::table('tierras_fisicas as t1')
-                             ->select('t1.id', 't1.categoria')
-                             ->whereRaw('t1.id = (select min(t2.id) from tierras_fisicas t2 where t2.categoria = t1.categoria)')
-                             ->get();
+            ->select('t1.id', 't1.categoria', 't1.url_img_1')
+            ->whereRaw('t1.id = (select min(t2.id) from tierras_fisicas t2 where t2.categoria = t1.categoria)')
+            ->get();
+
+        // Obtener los logos
+        $logos = DB::table('logos_familia_tg')->get();
 
         // Pasar los datos a la vista
-        return view('categories', ['tierras_fisicas' => $tierras_fisicas]);
+        return view('categories', ['tierras_fisicas' => $tierras_fisicas, 'logos' => $logos]);
     }
+
 }

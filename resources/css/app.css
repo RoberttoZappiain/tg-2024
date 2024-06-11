@@ -1,5 +1,6 @@
 /* Import Bootstrap CSS */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
 /*VARIABLES TG*/
 :root {
     --tg-color-primary-red: #E10600;
@@ -21,55 +22,89 @@
     --color-youtube: #FF0000;
     --color-twitter: #1DA1F2;
     --color-linkedin: #0077B5;
+    --tg-color-marron-rojizo-oscuro-rgb: 123, 45, 67; /* Color RGB sin la opacidad */
 
 }
-h1{
-    color:var(--tg-color-primary-red);
+
+h1 {
+    color: var(--tg-color-primary-red);
 }
+
 .icon {
-    fill: #25282A; /* Color inicial */
-    transition: fill 0.3s; /* Transición suave */
+    fill: #25282A;
+    /* Color inicial */
+    transition: fill 0.3s;
+    /* Transición suave */
     cursor: pointer;
 }
-.bread-a{
+
+.bread-a {
     color: var(--tg-color-gris-muy-oscuro) !important;
 }
+
 .masonry {
     column-count: 2;
     column-gap: 1rem;
 }
+
 @media (min-width: 768px) {
     .masonry {
         column-count: 4;
     }
 }
+
 .masonry-item {
     break-inside: avoid;
     margin-bottom: 1rem;
 }
+
 .masonry-item img {
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
 }
+
 .shadow-img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .img-overlay {
     position: relative;
 }
+
 .img-overlay img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
 }
-.bg-imgs{
-    background-image: url('C:\Users\USER\tg2024\public\media\Fondo.jpg');
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+.bg-imgs {
+    background-image: url('C:\Users\elrob\tg-2024\public\media\FondoClaroflecas.jpg');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    cursor: pointer;
+    overflow: hidden;
+    /* Asegura que la imagen no se salga del contenedor */
 
 }
+
+.zoom-img {
+    transition: transform 0.3s ease;
+    /* Añade una transición suave */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.zoom-img:hover {
+    transform: scale(1.1);
+    /* Aplica el efecto de zoom */
+    background-color: rgba(var(--tg-color-marron-rojizo-oscuro-rgb), 0.1); /* Usa la variable con opacidad */
+}
+
 .card-img-overlay-bottom {
     position: absolute;
     bottom: 0;
@@ -77,9 +112,13 @@ h1{
     height: auto;
     background: rgba(0, 0, 0, 0.50);
 }
+
+
 .card-img-overlay-bottom .content {
-    padding: 10px;
+    padding-left: 5px;
+    padding-top: 3px;
 }
+
 .img-overlay .overlay-content {
     position: absolute;
     bottom: 0;
@@ -91,50 +130,88 @@ h1{
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
-.icons {
-    fill: white; /* Color inicial */
-    transition: fill 0.3s; /* Transición suave */
-}
-.custom-dropdown::after {
-    content: none; /* Esto elimina el icono predeterminado */
-  }
 
-  .dropdown-icon {
-    width: 16px; /* Ajusta el tamaño del icono según sea necesario */
+.carousel-item img {
+    width: 100%;
+    object-fit: contain;
+}
+
+a {
+    color: var(--tg-color-gris-azul-oscuro);
+    text-decoration: none;
+}
+
+@media (min-width: 576px) {
+
+    /* For small devices and up */
+    .carousel-item img {
+        height: 700px;
+        /* Fixed height for larger screens */
+        object-fit: cover;
+    }
+}
+
+.icons {
+    fill: white;
+    /* Color inicial */
+    transition: fill 0.3s;
+    /* Transición suave */
+}
+
+.custom-dropdown::after {
+    content: none;
+    /* Esto elimina el icono predeterminado */
+}
+
+.dropdown-icon {
+    width: 16px;
+    /* Ajusta el tamaño del icono según sea necesario */
     height: 16px;
-    fill: var(--tg-color-rojo-oscuro); /* Color personalizado para el icono */
-    margin-left: 3px; /* Espacio entre el texto y el icono */
-  }
-  .accordion-button.no-icon::after {
+    fill: var(--tg-color-rojo-oscuro);
+    /* Color personalizado para el icono */
+    margin-left: 3px;
+    /* Espacio entre el texto y el icono */
+}
+
+.accordion-button.no-icon::after {
     display: none;
 }
-.accordion-button:hover{
+
+.accordion-button:hover {
     color: var(--tg-color-primary-red);
 }
-.dropdown-menu{
-    margin: 0px; padding:0px;
+
+.dropdown-menu {
+    margin: 0px;
+    padding: 0px;
 }
-.bgII{
+
+.bgII {
     background-color: var(--tg-color-black);
 }
-.bg-li{
+
+.bg-li {
     position: relative;
     display: block;
     text-decoration: none;
     color: var(--tg-color-gris-claro);
     cursor: pointer;
 }
-.bg-li:hover{
+
+.bg-li:hover {
     color: var(--tg-color-primary-red);
 }
-.hr-d{
+
+.hr-d {
     background-color: var(--tg-color-primary-red);
 }
-.border{
+
+.border {
     border-color: var(--tg-color-primary-red) !important;
     opacity: 0.7;
 }
-.text-links{
+
+.text-links {
     background-color: transparent;
     color: white;
     font-weight: normal;
@@ -145,10 +222,13 @@ h1{
     padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
     text-decoration: none;
 }
-.sh-r{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Sombra */
+
+.sh-r {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    /* Sombra */
 }
-.text-links:hover{
+
+.text-links:hover {
     color: var(--tg-color-gris-claro);
     font-weight: normal;
     border: 0px;
@@ -159,14 +239,20 @@ h1{
     text-decoration: none;
 
 }
+
 .accordion-button:not(.collapsed) {
-    background-color: var(--tg-color-rojo-oscuro); /* Color de fondo cuando el acordeón está activo */
-    box-shadow: 0 0 5px #8e0000; /* Anillo con el color especificado */
+    background-color: var(--tg-color-rojo-oscuro);
+    /* Color de fondo cuando el acordeón está activo */
+    box-shadow: 0 0 5px #8e0000;
+    /* Anillo con el color especificado */
     color: var(--tg-color-gris-claro);
 }
+
 .accordion-button.collapsed {
-    box-shadow: none; /* Anillo con el color especificado */
+    box-shadow: none;
+    /* Anillo con el color especificado */
 }
+
 .icon-facebook:hover {
     fill: var(--color-facebook);
 }
@@ -186,7 +272,9 @@ h1{
 .icon-linkedin:hover {
     fill: var(--color-linkedin);
 }
-#navbar-sm, #offcanvasExample{
+
+#navbar-sm,
+#offcanvasExample {
     background-color: var(--tg-color-black);
 }
 
@@ -195,62 +283,132 @@ h1{
     width: 2em;
     height: 2em;
 }
-.accordion-item{
+
+.accordion-item {
     color: var(--tg-color-gris-claro);
 }
-.btn-close::before, .btn-close::after {
+
+.btn-close::before,
+.btn-close::after {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 2em;
     height: 0.1em;
-    background-color: white; /* Cambia el color de las líneas al color blanco */
+    background-color: white;
+    /* Cambia el color de las líneas al color blanco */
     content: '';
     transform: translate(-50%, -50%) rotate(45deg);
 }
-.bgs{
+
+.bgs {
     background-color: var(--tg-color-gris-claro) !important;
 }
+
 .accordion-button-disabled::after {
     display: none;
 }
-.accordion-button::after{
-    filter: brightness(0) invert(1); /* Esto cambia el color a blanco */
+
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+    /* Esto cambia el color a blanco */
 }
+
 .btn-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-.btn-contact{
+
+.btn-contact {
     background-color: var(--tg-color-rojo-oscuro);
 }
-.list-group-item:hover{
+
+.list-group-item:hover {
     cursor: pointer;
     background-color: var(--tg-color-gris-azul-oscuro);
 }
+
 /* Estilo del botón cuando se pasa el cursor */
 .btn-contact::after {
-    background-color: #7a0000; /* Color de fondo al pasar el cursor */
-    color: white; /* Mantener el color del texto */
+    background-color: #7a0000;
+    /* Color de fondo al pasar el cursor */
+    color: white;
+    /* Mantener el color del texto */
 }
 
 /* Estilo del botón cuando está activo */
 .btn-contact:active {
-    background-color: #8e0000; /* Color de fondo cuando se hace clic */
-    color: white; /* Mantener el color del texto */
-    box-shadow: 0 0 10px #8e0000; /* Anillo con el color especificado */
+    background-color: #8e0000;
+    /* Color de fondo cuando se hace clic */
+    color: white;
+    /* Mantener el color del texto */
+    box-shadow: 0 0 10px #8e0000;
+    /* Anillo con el color especificado */
 }
 
 /* Estilo del botón cuando está enfocado */
 .btn-contact:focus {
-    background-color: #8e0000; /* Color de fondo cuando está enfocado */
-    color: white; /* Mantener el color del texto */
-    outline: none; /* Eliminar el contorno predeterminado del navegador */
-    box-shadow: 0 0 10px #8e0000; /* Anillo con el color especificado */
+    background-color: #8e0000;
+    /* Color de fondo cuando está enfocado */
+    color: white;
+    /* Mantener el color del texto */
+    outline: none;
+    /* Eliminar el contorno predeterminado del navegador */
+    box-shadow: 0 0 10px #8e0000;
+    /* Anillo con el color especificado */
+}
+
+
+/* //Carrousel marcas */
+.carousel-marcas-item img {
+    width: 100%;
+    height: auto;
+}
+.carousel-marcas-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.carousel-marcas-slide {
+    display: flex;
+    width: 100%;
+}
+.carousel-marcas-item {
+    flex: 1 0 20%;
+    max-width: 20%;
+}
+@media (max-width: 992px) {
+    .carousel-marcas-item {
+        flex: 1 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-marcas-item {
+        flex: 1 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 576px) {
+    .carousel-marcas-item {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+}
+.carrousel_family{
+    background-color: var(--tg-color-gris-claro);
+}
+.footer-tg{
+    background-color: var(--tg-color-black);
+}
+.bg-input{
+    background-color: var(--tg-color-gris-claro);
+}
+.btn-tg{
+    background-color: var(--tg-color-primary-red);
 }
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Black.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Black.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
 }
@@ -258,7 +416,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Bold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Bold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -266,7 +424,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNovaCond-Light.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNovaCond-Light.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNovaCond-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -274,7 +432,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNovaCond-Regular.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNovaCond-Regular.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNovaCond-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -282,7 +440,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Extrabold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Extrabold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Extrabold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -290,7 +448,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Light.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Light.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -298,7 +456,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Regular.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Regular.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -306,7 +464,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaNova-Semibold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaNova-Semibold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaNova-Semibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -314,7 +472,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Black.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Black.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
 }
@@ -322,7 +480,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-BlackIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-BlackIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-BlackIt.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
 }
@@ -330,7 +488,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Bold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Bold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -338,7 +496,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-BoldIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-BoldIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-BoldIt.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
 }
@@ -346,7 +504,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-ExtraBold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-ExtraBold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -354,7 +512,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-ExtraBoldIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-ExtraBoldIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-ExtraBoldIt.ttf') format('truetype');
     font-weight: 800;
     font-style: italic;
 }
@@ -362,7 +520,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Light.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Light.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -370,7 +528,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-LightIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-LightIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-LightIt.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
@@ -378,7 +536,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Medium.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Medium.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -386,7 +544,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-MediumIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-MediumIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-MediumIt.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
@@ -394,7 +552,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Regular.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Regular.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -402,7 +560,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-SemiBold.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-SemiBold.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -410,7 +568,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
 }
@@ -418,7 +576,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-Thin.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-Thin.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
 }
@@ -426,7 +584,7 @@ h1{
 @font-face {
     font-family: 'Proxima Nova';
     src: url('/fonts/proxima-nova/ProximaSoft-ThinIt.otf') format('opentype'),
-         url('/fonts/proxima-nova/ProximaSoft-ThinIt.ttf') format('truetype');
+        url('/fonts/proxima-nova/ProximaSoft-ThinIt.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
 }
@@ -434,6 +592,7 @@ h1{
 body {
     font-family: 'Proxima Nova', sans-serif;
 }
+
 #preloader {
     position: fixed;
     left: 0;
@@ -448,8 +607,10 @@ body {
 }
 
 .spinner {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #4b0e0e; /* Color of the spinner */
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #4b0e0e;
+    /* Color of the spinner */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -457,6 +618,11 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

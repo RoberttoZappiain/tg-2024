@@ -12,14 +12,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: linear-gradient(to bottom left, #ffffff, #bdc3c7);">
     <div id="preloader">
         <div class="spinner"></div>
     </div>
     <div id="app">
         @include('navbar')
+
     </div>
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
         <script>
@@ -68,6 +70,7 @@
                 });
             });
         </script>
+
 </body>
 
 </html>

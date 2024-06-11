@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 Route::get('/navbar', [NavbarController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/carousel', [CategoryController::class, 'showCarousel'])->name('carousel.show');
