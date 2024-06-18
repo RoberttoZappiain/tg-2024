@@ -55,11 +55,5 @@
                 </div>
             </div>
         </div>
-        <div class="col-3">
-            <h1>hello</h1>
-        </div>
-        <div class="col-4">
-            <h1>hello</h1>
-        </div>
     </div>
 </div>

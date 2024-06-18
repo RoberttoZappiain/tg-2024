@@ -40,7 +40,7 @@
                     @foreach ($tierras_fisicas as $item)
                         <div class="col-12 col-md-6 col-lg-3">
                             <div class="mb-4 shadow-img card text-bg-dark border-0 position-relative bg-imgs">
-                                <img class="img-fluid rounded  p-5 zoom-img" src="{{ $item->url_img_1 }}"
+                                <img class="img-fluid rounded p-5 zoom-img" src="{{ $item->url_img_1 }}"
                                     alt="">
                                 <div class="card-img-overlay-bottom rounded">
                                     <div class="content">

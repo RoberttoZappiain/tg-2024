@@ -598,7 +598,139 @@ a {
     font-weight: 100;
     font-style: italic;
 }
-
+.text-shadow {
+    text-shadow:
+        4px 4px 5px rgba(0, 0, 0, 0.3); /* Sombra negra difusa */
+    font-weight: bold;
+    color: #000;
+}
+.custom-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.custom-grid .col {
+    padding: 15px;
+}
+.custom-grid {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+}
+.section-title {
+    font-weight: bold;
+    color: #d9534f; /* Adjust color to match the one in your image */
+}
+.department-info {
+    text-align: center;
+    padding: 20px;
+}
+.department-info h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.department-info p {
+    color: #6c757d;
+}
+.department-info img {
+    width: 50px;
+    height: auto;
+}
+.parallax {
+    height: 200px;
+    width: 100%;
+    background-image: url(/images/Banners-rayito_1024x2837.webp?5c78b02083ef3d4ec2c9ffd28b336a4d); /* Reemplaza con la ruta de tu imagen */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5); /* Para hacer que el texto sea legible */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.image-container {
+    position: relative;
+}
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+    z-index: 1;
+    pointer-events: none;
+}
+.image-container{
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+}
+.image-container img {
+    position: relative;
+    z-index: 0;
+}
+.image-container .position-absolute {
+    z-index: 2;
+}
+.img-zoom:hover{
+    cursor: pointer;
+    transform: scale(1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.custom-horizontal-carousel {
+    overflow: hidden;
+    position: relative;
+}
+.custom-horizontal-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.custom-carousel-item {
+    flex: 0 0 33.33%; /* Show 3 items at a time */
+    max-width: 33.33%;
+}
+ul.custom-list li::before {
+    content: '▸';
+    color: red; /* Color rojo para el bullet */
+    margin-right: 10px;
+}
+ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+.services-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.services-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.services-list li span.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+.services-list li span.icon i {
+    font-size: 16px;
+}
+.services-list li.active {
+    background-color: #000;
+    color: #fff;
+}
 body {
     font-family: 'Proxima Nova', sans-serif;
 }

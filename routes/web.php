@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\QuienesSomosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 Route::get('/navbar', [NavbarController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/quienes-somos', [QuienesSomosController::class, 'show'])->name('quienes-somos.show');
 Route::get('/carousel', [CategoryController::class, 'showCarousel'])->name('carousel.show');
