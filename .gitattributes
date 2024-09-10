@@ -1,0 +1,13 @@
+* text=auto
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+/.github export-ignore
+CHANGELOG.md export-ignore
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+public/media/home_media/FINAL_VIDEO_CORPO_TG_2k_60.mp4 filter=lfs diff=lfs merge=lfs -text
+public/media/bg-one.gif filter=lfs diff=lfs merge=lfs -text
+public/media/home_media/FINAL_VIDEO_CORPO_TG_2k.mp4 filter=lfs diff=lfs merge=lfs -text

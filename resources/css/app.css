@@ -1,0 +1,1697 @@
+/* Import Bootstrap CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/*VARIABLES TG*/
+:root {
+    --tg-color-primary-red: #E10600;
+    --tg-color-seccond-red: #AF231C;
+    --tg-color-gris: #382F2D;
+    --tg-color-black: #25282A;
+    --tg-color-fucsia: #e6005c;
+    --tg-color-rojo-fuerte: #c0392b;
+    --tg-color-rojo-oscuro: #8e0000;
+    --tg-color-gris-marron-oscuro: #6e6259;
+    --tg-color-gris-azul-oscuro: #2c3e50;
+    --tg-color-rojo-brillante: #e74c3c;
+    --tg-color-marron-rojizo-oscuro: #4b0e0e;
+    --tg-color-gris-claro: #bdc3c7;
+    --tg-color-gris-muy-oscuro: #2e2e2e;
+    --color-instagram: #E4405F;
+    --color-whatsapp: #25D366;
+    --color-facebook: #1877F2;
+    --color-youtube: #FF0000;
+    --color-twitter: #1DA1F2;
+    --color-linkedin: #0077B5;
+    --tg-color-marron-rojizo-oscuro-rgb: 123, 45, 67;
+    /* Color RGB sin la opacidad */
+
+}
+ .content {
+    background-image: url('/media/fondo_blanco_web.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: var(--tg-color-primary-red);
+}
+
+.btn-red-darks {
+    background-color: var(--tg-color-marron-rojizo-oscuro);
+    color: white;
+}
+
+.btn-red-darks:hover {
+    background-color: var(--tg-color-gris-azul-oscuro);
+    color: var(--tg-color-gris-claro)
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    /* Esto elimina el box-shadow predeterminado de Bootstrap */
+    border-bottom: 2px solid var(--tg-color-marron-rojizo-oscuro) !important;
+
+}
+
+.icon {
+    fill: #25282A;
+    /* Color inicial */
+    transition: fill 0.3s;
+    /* Transición suave */
+    cursor: pointer;
+}
+
+.bread-a {
+    color: var(--tg-color-gris-muy-oscuro) !important;
+}
+
+.masonry {
+    column-count: 2;
+    column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .masonry {
+        column-count: 4;
+    }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.shadow-img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.img-overlay {
+    position: relative;
+}
+
+.img-overlay img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.bg-imgs {
+    /* background-image: url('C:\Users\USER\tg2024\public\media\FondoClaroflecas.jpg'); */
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    cursor: pointer;
+    overflow: hidden;
+    /* Asegura que la imagen no se salga del contenedor */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    /* Añade un efecto de desenfoque */
+    -webkit-backdrop-filter: blur(3px);
+    /* Compatibilidad con Safari */
+}
+
+.zoom-img {
+    transition: transform 0.3s ease;
+    /* Añade una transición suave */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.zoom-img:hover {
+    transform: scale(1.1);
+    /* Aplica el efecto de zoom */
+    /* Usa la variable con opacidad */
+}.custom-table-responsive {
+    background-color: #fff;
+    color: #000;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.custom-table-bordered {
+    border: 1px solid #ddd;
+}
+
+.custom-table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.custom-table-striped tbody tr:nth-of-type(even) {
+    background-color: #fff;
+}
+
+.custom-table td, .custom-table th {
+    padding: 0.5rem; /* Reduce the padding to make the table smaller */
+    vertical-align: top;
+    border: 1px solid #ddd; /* Add border to table cells */
+}
+
+.custom-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.875rem; /* Reduce font size to make the table smaller */
+}
+
+.custom-table th {
+    text-align: left;
+    background-color: #f2f2f2; /* Add background color to header */
+}
+#pdf-container {
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+}
+#pdf-container object {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+}
+.zoom-img-category {
+    transition: transform 0.3s ease-out;
+    /* Añade una transición suave */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.zoom-img-category:hover {
+    transform: scale(0.9);
+    /* Aplica el efecto de zoom */
+    background-color: rgba(var(--tg-color-gris-azul-oscuro), 0.1);
+    /* Usa la variable con opacidad */
+}
+
+
+.card-img-overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    /* Bordes redondeados para un efecto más suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para mayor profundidad */
+}
+
+
+.card-img-overlay-bottom .content {
+    padding-left: 5px;
+    padding-top: 3px;
+}
+
+.img-overlay .overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: contain;
+}
+
+a {
+    color: var(--tg-color-gris-azul-oscuro);
+    text-decoration: none;
+}
+
+@media (min-width: 576px) {
+
+    /* For small devices and up */
+    .carousel-item img {
+        height: 700px;
+        /* Fixed height for larger screens */
+        object-fit: cover;
+    }
+}
+
+.icons {
+    fill: white;
+    /* Color inicial */
+    transition: fill 0.3s;
+    /* Transición suave */
+}
+
+.custom-dropdown::after {
+    content: none;
+    /* Esto elimina el icono predeterminado */
+}
+
+.dropdown-icon {
+    width: 16px;
+    /* Ajusta el tamaño del icono según sea necesario */
+    height: 16px;
+    fill: var(--tg-color-rojo-oscuro);
+    /* Color personalizado para el icono */
+    margin-left: 3px;
+    /* Espacio entre el texto y el icono */
+}
+
+.accordion-button.no-icon::after {
+    display: none;
+}
+
+.accordion-button:hover {
+    color: var(--tg-color-primary-red);
+}
+
+.dropdown-menu {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bgII {
+    background-color: var(--tg-color-black);
+}
+
+.bg-red-intenso{
+    background-color: var(--tg-color-marron-rojizo-oscuro);
+}
+.bg-li {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: var(--tg-color-gris-claro);
+    cursor: pointer;
+}
+
+.bg-li:hover {
+    color: var(--tg-color-primary-red);
+}
+
+.hr-d {
+    background-color: var(--tg-color-primary-red);
+}
+
+.border {
+    border-color: var(--tg-color-primary-red) !important;
+    opacity: 0.7;
+}
+
+.text-links {
+    background-color: transparent;
+    color: white;
+    font-weight: normal;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    text-decoration: none;
+}
+
+.sh-r {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    /* Sombra */
+}
+
+.text-links:hover {
+    color: var(--tg-color-gris-claro);
+    font-weight: normal;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    text-decoration: none;
+
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--tg-color-rojo-oscuro);
+    /* Color de fondo cuando el acordeón está activo */
+    box-shadow: 0 0 5px #8e0000;
+    /* Anillo con el color especificado */
+    color: var(--tg-color-gris-claro);
+}
+
+.accordion-button.collapsed {
+    box-shadow: none;
+    /* Anillo con el color especificado */
+}
+
+.icon-facebook:hover {
+    fill: var(--color-facebook);
+}
+
+/* Instagram CSS Linear Gradient Background */
+.gradient-ig {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.icon-instagram:hover {
+    fill: var(--color-instagram);
+}
+
+.icon-twitter:hover {
+    fill: var(--color-twitter);
+}
+
+.icon-youtube:hover {
+    fill: var(--color-youtube);
+}
+
+.icon-linkedin:hover {
+    fill: var(--color-linkedin);
+}
+
+#navbar-sm,
+#offcanvasExample {
+    background-color: var(--tg-color-black);
+}
+
+.btn-close {
+    position: relative;
+    width: 2em;
+    height: 2em;
+}
+
+.accordion-item {
+    color: var(--tg-color-gris-claro);
+}
+
+.btn-close::before,
+.btn-close::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 0.1em;
+    background-color: white;
+    /* Cambia el color de las líneas al color blanco */
+    content: '';
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bgs {
+    background-color: var(--tg-color-gris-claro) !important;
+}
+
+.accordion-button-disabled::after {
+    display: none;
+}
+
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+    /* Esto cambia el color a blanco */
+}
+
+.btn-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.btn-contact {
+    background-color: var(--tg-color-rojo-oscuro);
+}
+
+.list-group-item:hover {
+    cursor: pointer;
+    background-color: var(--tg-color-gris-azul-oscuro);
+    color: white;
+
+}
+
+.list-group-items-menu:hover {
+    cursor: pointer;
+    background-color: var(--tg-color-gris-claro);
+    color: white;
+
+}
+.active .fa-solid {
+    font-size: 25px;
+    transition: font-size 0.3s ease;
+    background-color: var(--tg-color-marron-rojizo-oscuro);}
+/* Estilo del botón cuando se pasa el cursor */
+.btn-contact::after {
+    background-color: #7a0000;
+    /* Color de fondo al pasar el cursor */
+    color: white;
+    /* Mantener el color del texto */
+}
+
+/* Estilo del botón cuando está activo */
+.btn-contact:active {
+    background-color: #8e0000;
+    /* Color de fondo cuando se hace clic */
+    color: white;
+    /* Mantener el color del texto */
+    box-shadow: 0 0 10px #8e0000;
+    /* Anillo con el color especificado */
+}
+
+/* Estilo del botón cuando está enfocado */
+.btn-contact:focus {
+    background-color: #8e0000;
+    /* Color de fondo cuando está enfocado */
+    color: white;
+    /* Mantener el color del texto */
+    outline: none;
+    /* Eliminar el contorno predeterminado del navegador */
+    box-shadow: 0 0 10px #8e0000;
+    /* Anillo con el color especificado */
+}
+
+
+/* //Carrousel marcas */
+.carousel-marcas-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    height: 200px;
+    /* Ajusta según sea necesario */
+    position: relative;
+}
+
+.carousel-marcas-item {
+    flex: 1 0 20%;
+    /* 5 elementos por fila */
+    max-width: 20%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.carousel-marcas-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+}
+
+@media (max-width: 992px) {
+    .carousel-marcas-item {
+        flex: 1 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-marcas-item {
+        flex: 1 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-marcas-item {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+}
+
+.carrousel_family {
+    background-color: var(--tg-color-gris-claro);
+}
+
+.footer-tg {
+    background-color: var(--tg-color-black);
+
+}
+
+.bg-input {
+    background-color: var(--tg-color-gris-claro);
+}
+
+.btn-tg {
+    background-color: var(--tg-color-primary-red);
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Black.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Bold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNovaCond-Light.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNovaCond-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNovaCond-Regular.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNovaCond-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Extrabold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Extrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Light.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Regular.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaNova-Semibold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaNova-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Black.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-BlackIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Bold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-BoldIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-BoldIt.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-ExtraBold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-ExtraBoldIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-ExtraBoldIt.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Light.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-LightIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Medium.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-MediumIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-MediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Regular.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-SemiBold.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-Thin.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova/ProximaSoft-ThinIt.otf') format('opentype'),
+        url('/fonts/proxima-nova/ProximaSoft-ThinIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+.text-shadow {
+    text-shadow:
+        4px 4px 5px rgba(0, 0, 0, 0.3);
+    /* Sombra negra difusa */
+    font-weight: bold;
+    color: #000;
+}
+
+.custom-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.custom-grid .col {
+    padding: 15px;
+}
+
+.custom-grid {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #d9534f;
+    /* Adjust color to match the one in your image */
+}
+
+.department-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.department-info h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.department-info p {
+    color: #6c757d;
+}
+
+.department-info img {
+    width: 50px;
+    height: auto;
+}
+
+.parallax {
+    height: 100px;
+    width: 100%;
+    background-image: url('/media/Banner_1024x2837_b.webp');
+
+    /* background-image: url('C:\Users\USER\tg2024\public\media\services_img\Banners-rayito_1024x2837.webp'); */
+    /* Reemplaza con la ruta de tu imagen */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.image-container {
+    position: relative;
+    backdrop-filter: blur(0px);
+    /* Inicial sin desenfoque */
+    transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.image-container:hover {
+    backdrop-filter: blur(3px);
+    /* Desenfoque al hacer hover */
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    /* Inicial sin desenfoque */
+    z-index: 1;
+    pointer-events: none;
+    transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.image-container:hover::before {
+    backdrop-filter: blur(3px);
+    /* Desenfoque al hacer hover */
+}
+
+.image-container span {
+    text-shadow: 1px 1px 2px var(--tg-color-marron-rojizo-oscuro);
+}
+
+.text-shadow-paralax {
+    text-shadow: 1px 1px 2px var(--tg-color-marron-rojizo-oscuro);
+}
+
+.image-container img {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+.invisible-toggle {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+}
+
+.invisible-toggle-img:hover .invisible-toggle {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-container .position-absolute {
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.image-container hr {
+    width: 30%;
+    transition: width 0.5s ease-in-out;
+}
+
+.invisible-toggle-img:hover hr {
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .image-container .position-absolute {
+        top: 40%;
+        /* Ajusta la posición vertical en dispositivos móviles */
+        padding: 0.5rem;
+        /* Reduce el padding para una mejor visualización móvil */
+    }
+
+    .image-container h1 {
+        font-size: 1.5rem;
+        /* Ajusta el tamaño de la fuente para dispositivos móviles */
+    }
+
+    .image-container span {
+        font-size: 1rem;
+        /* Ajusta el tamaño de la fuente para dispositivos móviles */
+    }
+}
+
+.logo-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.logo-carousel-inner {
+    display: flex;
+    width: 100%;
+}
+
+
+.logo-carousel-item {
+    flex: 0 0 20%;
+    /* Mostrar 5 elementos a la vez */
+    max-width: 20%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.logo-carousel-item.active {
+    opacity: 1;
+}
+
+.slide-in-blurred-bottom {
+    -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.img-zoom:hover {
+    cursor: pointer;
+    transform: scale(1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.custom-horizontal-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-horizontal-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.custom-carousel-item {
+    flex: 0 0 33.33%;
+    /* Show 3 items at a time */
+    max-width: 33.33%;
+}
+@media (max-width: 576px) {
+    .custom-carousel-item {
+        flex: 0 0 100%;
+        /* Show 1 item at a time */
+        max-width: 100%;
+    }
+}
+ul.custom-list li::before {
+    content: '▸';
+    color: var(--tg-color-primary-red);
+    /* Color rojo para el bullet */
+    margin-right: 10px;
+}
+
+ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.services-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.services-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.services-list li span.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.services-list li span.icon i {
+    font-size: 16px;
+}
+
+.services-list li.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.icon-bg-arrow {
+    fill: var(--tg-color-rojo-oscuro);
+}
+
+.position-relatives {
+    height: 100vh;
+    /* Ajusta la altura del contenedor */
+}
+
+.position-relatives img {
+    height: 100%;
+    /* Ajusta la altura de la imagen para que llene el contenedor */
+    object-fit: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+}
+
+.overlay-content {
+    /* Asegura que el contenido del overlay tenga la misma altura que el contenedor */
+    max-width: 50%;
+    /* Limita el ancho del overlay */
+    overflow-y: auto;
+    /* Permite desplazarse si el contenido es demasiado alto */
+}
+
+body {
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.active {
+    color: var(--tg-color-gris-claro);
+}
+
+.grayscale {
+    filter: grayscale(70%);
+}
+
+.custom-grid-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.custom-grid-item img {
+    width: 100%;
+    height: auto;
+}
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #4b0e0e;
+    /* Color of the spinner */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.custom-card {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 75px;
+    background-size: cover;
+    background-position: top;
+    /* Ajusta según tus necesidades */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.custom-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.custom-card:hover::before {
+    transform: scale(1.1);
+}
+
+.iframe-tg {
+    height: 100%;
+    width: 100%;
+}
+
+.custom-card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Estilos para los elementos de la lista de eventos */
+#events-list {
+    padding: 0;
+    margin: 0;
+}
+
+#events-list li {
+    background-color: #333;
+    /* Fondo oscuro para los elementos de la lista */
+    color: #fff;
+    /* Color de texto blanco */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    /* Bordes redondeados */
+    display: flex;
+    justify-content: space-between;
+    /* Espaciado entre el título y la fecha */
+    align-items: center;
+}
+
+#events-list li .event-title {
+    font-weight: bold;
+    /* Negrita para el título */
+}
+
+#events-list li .event-date {
+    font-size: 0.9em;
+    /* Tamaño de fuente más pequeño para la fecha */
+    color: #ccc;
+    /* Color de texto gris para la fecha */
+}
+
+/* resources/css/custom.css */
+.fc {
+    background-color: var(--tg-color-black);
+    /* Fondo negro para el calendario */
+    color: var(--tg-color-gris-claro);
+}
+
+.fc-toolbar {
+    background-color: var(--tg-color-black);
+    /* Fondo oscuro para la barra de herramientas */
+    color: var(--tg-color-gris-claro);
+    /* Color de texto blanco */
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.fc-daygrid-day-number {
+    color: var(--tg-color-black);
+    /* Color de los números de los días */
+}
+
+.fc-daygrid-event {
+    background-color: var(--tg-color-black);
+    /* Fondo azul para los eventos */
+    border-color: var(--tg-color-black);
+    /* Borde azul para los eventos */
+    color: var(--tg-color-gris-claro);
+    ;
+    /* Color de texto blanco para los eventos */
+}
+
+.content {
+    /* Inicialmente asigna un margen top */
+    margin-top: 150px;
+    /* Ajusta este valor según la altura de tu navbar */
+}
+
+/* Puedes agregar más estilos según sea necesario */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+.carousel-marcas-item.active {
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+}
+
+.carousel-marcas-item.active:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.carousel-marcas-item.active:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.carousel-marcas-item.active:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.carousel-marcas-item.active:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.carousel-marcas-item.active:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+#video-container-home {
+    width: 100%;
+    height: auto;
+}
+
+/* Asegúrate de que el video ocupe todo el ancho del contenedor */
+#video-container-home video {
+    width: 100%;
+    height: auto;
+}
+
+/* Alinear el texto debajo de los indicadores del carrusel */
+.carousel-caption h3,
+.carousel-caption p {
+    position: absolute;
+    bottom: 70px;
+    /* Ajusta este valor según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    /* Asegúrate de que el texto sea visible */
+    z-index: 1;
+    /* Asegura que el texto esté por encima del video */
+}
+
+.carousel-caption p {
+    bottom: 30;
+    /* Ajusta este valor para que no se superponga con el h5 */
+}
+
+.my-view-all {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.my-carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.menu-item_s {
+    text-align: center;
+    border-radius: 12px; /* Evitar formas circulares */
+    font-weight: bold;
+    font-size: small;
+    width: 170px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f8f9fa;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 20px, rgba(0, 0, 0, 0.3) 0px 6px 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 220px; /* Asegura que todos tengan la misma altura */
+}
+
+.menu-item_s:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 30px, rgba(0, 0, 0, 0.12) 0px 10px 15px;
+    background-color: #f1f3f5;
+}
+
+.menu-content {
+    padding: 10px;
+    display: inline-block;
+}
+
+.img-container_s {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in, filter 0.3s ease-in;
+    border-radius: 50%;
+}
+
+.img-container_s:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: grayscale(40%);
+}
+
+.menu-text {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu-item_s:hover .menu-text {
+    color: var(--tg-color-seccond-red);
+}
+.bg-items-menu {
+    background-color: var(--tg-color-marron-rojizo-oscuro) 0.3;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-items-menu-rows {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.faq-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.faq-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.faq-left h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #001f3f;
+    /* Color del texto principal */
+}
+
+.faq-left p {
+    color: #555;
+    /* Color del texto secundario */
+}
+
+.custom-accordion {
+    flex: 1;
+    max-width: 600px;
+}
+
+.custom-accordion .custom-accordion-button {
+    background-color: transparent;
+    /* Quita el color de fondo */
+    border: none;
+    /* Quita los bordes */
+    border-bottom: 1px solid #000;
+    /* Añade solo el borde inferior */
+    color: #000;
+    /* Color del texto */
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    padding: 0.75rem 1.25rem;
+    /* Ajusta el padding del botón */
+    font-size: 1.1rem;
+    /* Tamaño de la fuente del botón */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-accordion .custom-accordion-button svg {
+    transition: transform 0.2s;
+    /* Transición suave para la rotación */
+    transform: rotate(180deg);
+    /* Rota la flecha cuando está colapsada */
+
+}
+
+.custom-accordion .custom-accordion-button:not(.collapsed) svg {
+    transform: rotate(90deg);
+    /* Rota la flecha cuando está colapsada */
+}
+
+.custom-accordion .custom-accordion-button:not(.collapsed) {
+    background-color: #fff;
+    /* Fondo blanco cuando está expandido */
+    color: #000;
+    /* Color del texto cuando está expandido */
+    border-bottom: 1px solid #000;
+    /* Mantiene el borde inferior */
+}
+
+.custom-accordion .accordion-collapse {
+    background-color: #fff;
+    /* Fondo blanco del contenido expandido */
+    margin-top: -10px;
+    /* Elimina el espacio entre el título y el contenido */
+
+}
+
+.custom-accordion .custom-accordion-item {
+    border: none;
+    /* Quita el borde de la caja del acordeón */
+}
+
+.custom-accordion .custom-accordion-body {
+    border: none;
+    /* Quita el borde del cuerpo del acordeón */
+    font-size: 0.9rem;
+    /* Tamaño de fuente del cuerpo */
+    color: #555;
+    /* Color del texto del cuerpo */
+    padding: 15px;
+}
+
+.line-text {
+    display: flex;
+    align-items: center;
+}
+
+.line-text hr {
+    flex-grow: 0;
+    /* Ajusta el comportamiento de flexbox si quieres una línea fija */
+    border: none;
+    border-top: 2px solid #ff0000;
+    /* Ajusta el color de la línea */
+    margin: 0 10px 0 0;
+    /* Ajusta el espacio alrededor del texto */
+    width: 50px;
+    /* Ajusta el ancho de la línea */
+    height: 2px;
+    /* Ajusta la altura de la línea */
+}
+
+.line-text span {
+    white-space: nowrap;
+    /* Evita que el texto se envuelva */
+    color: var(--tg-color-primary-red);
+    /* Ajusta el color según sea necesario */
+}
+
+.bg-litle-white {
+    background-color: #f0f0f0;
+}
+
+.custom-list_s {
+    list-style: none;
+    /* Elimina el estilo de lista predeterminado */
+}
+
+.custom-list_s li {
+    list-style-image: url('/media/icons/bineta_rayo.png');
+    /* Agrega la imagen como fondo */
+    padding-left: 30px;
+    /* Añade espacio para la imagen */
+    background-size: 20px 20px;
+    /* Ajusta el tamaño de la imagen */
+    margin-bottom: 10px;
+    /* Espacio entre los elementos de la lista */
+    width: 5px;
+    /* Ajusta el ancho de la imagen */
+    height: 5px;
+    /* Ajusta la altura de la imagen */
+}
+
+#pdf-container {
+    width: 80%; /* Ajusta el ancho */
+    height: 80vh; /* Ajusta la altura */
+    margin: 0 auto; /* Centra horizontalmente */
+    border: 1px solid #ccc; /* Añade un borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra */
+    overflow: hidden; /* Esconde el contenido que sobrepasa el contenedor */
+}
+.left-align-personalizated {
+    text-align: left;
+}
+.right-align-personalizated {
+    text-align: right;
+}
+
+.btn-red-darks-accordion {
+    background-color: var(--tg-color-rojo-oscuro);
+    color: white !important;
+}
+.btn-red-darks-accordion:hover{
+    color: var(--tg-colo);
+}
+.btn-red-darks-accordion .active{
+    color: var(--tg-color-gris-claro);
+    background-color: var(--tg-color-marron-rojizo-oscuro);
+}
+.custom-list-group {
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+  }
+  .custom-list-group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;  /* Doble de grueso */
+    background: #e9ecef;
+    left: 28px;
+  }
+  .custom-list-group-item {
+    padding-left: 60px;
+    position: relative;
+    border: none;
+    background: none;
+    margin-bottom: 10px; /* Añadido para espacio entre elementos */
+  }
+  .custom-list-group-item::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6c757d;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .custom-list-group-item.active::before {
+    background: #343a40;
+
+  }
+  .custom-list-group-item i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background: #343a40;
+    color: #fff;
+    z-index: 2;
+  }
+  .list-group-item.active{
+    background-color: var(--tg-color-marron-rojizo-oscuro);
+  }
+  .carrousel_services_tg-container {
+    position: relative;
+}
+
+.carrousel_services_tg-inner {
+    display: flex;
+    overflow: hidden;
+}
+
+.carrousel_services_tg-item {
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.carrousel_services_tg-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carrousel_services_tg-item.active {
+    transform: translateX(0);
+}
+
+.carrousel_services_tg-prev,
+.carrousel_services_tg-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carrousel_services_tg-prev {
+    left: 10px;
+}
+
+.carrousel_services_tg-next {
+    right: 10px;
+}
+
+.carrousel_services_tg-card {
+    width: 100%;
+    height: auto;
+}
+
+.carrousel_services_tg-img {
+    max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
+    object-fit: cover;
+}
+.active-filter {
+    color: var(--tg-color-rojo-oscuro); /* Cambia esto al color que desees */
+    font-weight: bold; /* Opcional: Hacer el texto más grueso */
+}
+.active-link {
+    color: grey !important; /* El color del enlace activo */
+}
+.bg-li a {
+    color: white; /* Color blanco para los enlaces no activos */
+    text-decoration: none;
+}
+
+.bg-li a:hover {
+    color: #cccccc; /* Color gris claro al pasar el cursor sobre cualquier enlace */
+}
+
+.bg-li .active-link {
+    color: #cccccc; /* Color gris para el enlace activo */
+    font-weight: bold; /* Opcional: si quieres que el enlace activo tenga un estilo más resaltado */
+}
+li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
