@@ -4,51 +4,101 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Familia;  // Importar el modelo Familia
+use App\Models\Categoria;  // Importar el modelo Categoria
 
 class GeneralController extends Controller
 {
     public function index($table)
     {
+        // Reemplazar los guiones por guiones bajos para mantener consistencia
         $table = str_replace('-', '_', $table);
 
-        // Obtener todos los registros de la tabla
-        $productos = DB::connection('mysql2')->table($table)->get();
+        // Verificar si estamos trabajando con la tabla `familias`
+        if ($table === 'familias') {
+            // Obtener todos los registros de la tabla familias
+            $familias = DB::connection()->table($table)->get();
 
-        // Obtener las categorías únicas desde los productos
+            // Renderizar la vista de familias con los registros
+            return view('familias.index', compact('familias'));
+        }
+
+        // Si no es la tabla familias, usar la lógica actual
+        $productos = DB::connection('mysql2')->table($table)->get();
         $categorias = $productos->pluck('categoria')->unique();
         $logos = DB::connection('mysql')->table('logos_familia_tg')->get();
 
-        // Renderizar la vista correspondiente con los productos y las categorías
         $view = $this->resolveView($table, 'index');
         return view($view, compact('productos', 'categorias', 'logos'));
     }
-    public function show($table, $slug)
+
+    public function show($categoria_slug, $subcategoria_slug, $slug)
     {
-        $table = str_replace('-', '_', $table);
+        $logos = DB::connection('mysql')->table('logos_familia_tg')->get();
 
-        // Resolver el modelo dinámicamente basado en la tabla
-        $modelClass = $this->resolveModel($table);
+        // Obtener el producto basado en el slug del producto, subcategoría y categoría
+        $producto = DB::table('productos')
+            ->join('subcategorias', 'productos.subcategoria_id', '=', 'subcategorias.id')
+            ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+            ->join('familias', 'categorias.familia_id', '=', 'familias.id')
+            ->where('productos.slug', $slug)
+            ->where('subcategorias.slug', $subcategoria_slug)
+            ->where('categorias.slug', $categoria_slug)
+            ->select(
+                'productos.*',
+                'subcategorias.nombre as nombre_subcategoria',
+                'subcategorias.slug as subcategoria_slug',
+                'categorias.nombre as nombre_categoria',
+                'categorias.slug as categoria_slug',
+                'categorias.familia_id',
+                'familias.nombre as nombre_familia',
+                'familias.slug as familia_slug'
+            )
+            ->first();
+        // Si no se encuentra el producto, lanzar un error 404
+        abort_if(!$producto, 404, 'Producto no encontrado');
+            // Obtener productos relacionados (basado en la misma subcategoría, excluyendo el producto actual)
+        $productosRelacionados = DB::table('productos')
+        ->join('subcategorias', 'productos.subcategoria_id', '=', 'subcategorias.id')
+        ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id') // Unir con categorías para obtener el slug
+        ->where('subcategorias.id', $producto->subcategoria_id)
+        ->where('productos.id', '!=', $producto->id) // Excluir el producto actual
+        ->select('productos.*', 'subcategorias.slug as subcategoria_slug', 'categorias.slug as categoria_slug') // Seleccionar el slug de la categoría
+        ->limit(6)
+        ->get();
 
-        // Consultar el registro usando el modelo resuelto
-        $producto = $modelClass::where('slug', $slug)->firstOrFail();
+            // **Nueva consulta adicional**: Obtener productos adicionales de la misma familia para la tabla comparativa
+        $productosParaComparar = DB::table('productos')
+        ->join('subcategorias', 'productos.subcategoria_id', '=', 'subcategorias.id')
+        ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+        ->where('categorias.familia_id', $producto->familia_id)
+        ->where('productos.id', '!=', $producto->id) // Excluir el producto actual
+        ->whereNotIn('productos.id', $productosRelacionados->pluck('id')) // Excluir los productos relacionados ya obtenidos
+        ->select(
+            'productos.*',
+            'subcategorias.nombre as nombre_subcategoria',
+            'subcategorias.slug as subcategoria_slug',
+            'categorias.nombre as nombre_categoria',
+            'categorias.slug as categoria_slug'
+        )
+        ->limit(4)
+        ->get();
 
-        return view($this->resolveView($table, 'show'), compact('producto'));
+        // Retornar la vista con los datos necesarios para el breadcrumb
+        return view('familias.show', compact('producto', 'productosRelacionados', 'logos', 'productosParaComparar'));
     }
-
     // Resolver el modelo basado en la tabla
     protected function resolveModel($table)
     {
-        // Mapear la tabla al nombre del modelo
         $models = [
             'banco_capacitores' => \App\Models\BancoCapacitores::class,
             'infraestructura' => \App\Models\Infraestructura::class,
             'refrigeracion' => \App\Models\Refrigeracion::class,
             'iluminacion' => \App\Models\Iluminacion::class,
             'telemetria_control' => \App\Models\TelemetriaControl::class,
-            // Agrega más mapeos aquí para otras tablas
+            'familias' => \App\Models\Familia::class, // Agregar familias como modelo
         ];
 
-        // Si no se encuentra el modelo, retornar un error 404
         return $models[$table] ?? abort(404);
     }
 
@@ -61,47 +111,53 @@ class GeneralController extends Controller
             'refrigeracion' => 'refrigeracion.' . $type,
             'iluminacion' => 'iluminacion.' . $type,
             'telemetria_control' => 'telemetria_control.' . $type,
-            // Agrega más mapeos aquí para otras tablas
+            'familias' => 'familias.' . $type, // Agregar la vista de familias
         ];
 
-        // Si no se encuentra la vista, retornar un error 404
         return $views[$table] ?? abort(404);
     }
-
-    // Resolver la categoría basado en la tabla y el producto
-    protected function resolveCategoria($table, $producto)
+    public function showFamilia($slug)
     {
-        // Generalmente, la categoría estará relacionada al producto mediante una relación o un campo específico.
-        // Aquí puedes usar un campo de relación como `categoria_id` o un nombre directo.
-        switch ($table) {
-            case 'banco_capacitores':
-                return 'Banco de Capacitores'; // Devuelve el nombre de la categoría
-            case 'infraestructura':
-                return 'Infraestructura';
-            case 'refrigeracion':
-                return 'Refrigeración';
-            case 'iluminacion':
-                return 'Iluminación';
-            case 'telemetria_control':
-                return 'Telemetría y Control';
-            default:
-                return 'Categoría Desconocida';
-        }
-    }
+        // Obtener la familia por el slug
+        $familia = DB::table('familias')->where('slug', $slug)->first();
 
-    // Resolver la subcategoría basado en la tabla y el producto
-    protected function resolveSubcategoria($table, $producto)
-    {
-        // Similar a la categoría, puedes obtener la subcategoría basada en un campo específico del producto.
-        switch ($table) {
-            case 'banco_capacitores':
-            case 'infraestructura':
-            case 'refrigeracion':
-            case 'iluminacion':
-            case 'telemetria_control':
-                return $producto->nombre_kit; // Puedes usar el campo `nombre_kit` como subcategoría
-            default:
-                return 'Subcategoría Desconocida';
-        }
+        // Si no se encuentra la familia, lanzar un error 404
+        abort_if(!$familia, 404, 'Familia no encontrada');
+
+        // Obtener todas las subcategorías de la familia, incluso si no tienen productos
+        $subcategorias = DB::table('subcategorias')
+            ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+            ->leftJoin('productos', 'subcategorias.id', '=', 'productos.subcategoria_id')
+            ->where('categorias.familia_id', $familia->id)
+            ->select(
+                'subcategorias.*',
+                'categorias.nombre as nombre_categoria',
+                'categorias.slug as categoria_slug',
+                DB::raw('COUNT(productos.id) as productos_count')
+            )
+            ->groupBy('subcategorias.id', 'categorias.id')
+            ->get();
+
+        // Obtener la subcategoría activa desde el query string
+        $activeSubcategoria = request('subcategoria');
+
+        // Obtener los productos filtrados por la subcategoría activa, si se seleccionó una
+        $productos = DB::table('productos')
+            ->join('subcategorias', 'productos.subcategoria_id', '=', 'subcategorias.id')
+            ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+            ->where('categorias.familia_id', $familia->id)
+            ->when($activeSubcategoria, function ($query, $activeSubcategoria) {
+                return $query->where('subcategorias.slug', $activeSubcategoria);
+            })
+            ->select(
+                'productos.*',
+                'subcategorias.nombre as nombre_subcategoria',
+                'subcategorias.slug as subcategoria_slug',
+                'categorias.slug as categoria_slug'
+            )
+            ->paginate(12);
+
+        // Retornar la vista con los datos
+        return view('familias.index', compact('familia', 'subcategorias', 'productos', 'activeSubcategoria'));
     }
 }

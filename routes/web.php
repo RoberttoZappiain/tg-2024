@@ -38,6 +38,8 @@ Route::get('/proteccion/{categoria_slug}/{subcategoria_slug}/{slug}', [Proteccio
 Route::get('/proteccion/sistemas-tierra-fisica', [CategoryController::class, 'index'])->name('categorias.index');
 Route::get('/', [QuienesSomosController::class, 'show'])->name('quienes-somos.show');
 Route::get('/home', [HomeController::class, 'show'])->name('home.show');
+Route::get('/familias/{slug}', [GeneralController::class, 'showFamilia'])->name('familias.showFamilia');
+Route::get('familias/{categoria_slug}/{subcategoria_slug}/{slug}', [GeneralController::class, 'show'])->name('familias.show');
 Route::get('/carousel', [CategoryController::class, 'showCarousel'])->name('carousel.show');
 Route::get('/CCAD', [CcadController::class, 'show'])->name('CCAD.show');
 Route::get('/Eventos', [EventosController::class, 'show'])->name('Eventos.show');

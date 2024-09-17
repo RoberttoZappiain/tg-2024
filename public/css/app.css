@@ -1208,7 +1208,7 @@ body {
 
 .content {
     /* Inicialmente asigna un margen top */
-    margin-top: 150px;
+    margin-top: 145px;
     /* Ajusta este valor según la altura de tu navbar */
 }
 
@@ -1316,7 +1316,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 220px; /* Asegura que todos tengan la misma altura */
 }
-
+.menu-item_s:last-child{
+    width: 100%;
+}
 .menu-item_s:hover {
     transform: translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 30px, rgba(0, 0, 0, 0.12) 0px 10px 15px;

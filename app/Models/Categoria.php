@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     use HasFactory;
-    protected $connection = 'mysql2'; // Asegúrate de que esta conexión esté configurada correctamente en config/database.php
 
-    protected $table = 'categoria';
+    protected $table = 'categorias';
+    public function subcategorias()
+    {
+        return $this->hasMany(Subcategoria::class, 'categoria_id');
+    }
+
+    public function familia()
+    {
+        return $this->belongsTo(Familia::class, 'familia_id');
+    }
 }

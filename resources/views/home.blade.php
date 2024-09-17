@@ -4,198 +4,66 @@
 @section('title', 'Quienes Somos')
 
 @section('content')
+<div class="container-fluid m-0 p-0">
+    <div class="col-12" style="background-color: black">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($imagenes as $index => $imagen)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img class="" src="http://127.0.0.1:8000/storage/{{ $imagen->ruta_imagen }}"
+                            alt="{{ $imagen->titulo }}" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="fw-bold fs-1">{{ $imagen->titulo }}</h3>
+                            <p>{{ $imagen->descripcion }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="carousel-indicators">
+                @foreach ($imagenes as $index => $imagen)
+                    <button type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"
+                        aria-label="Slide {{ $index + 1 }}"></button>
+                @endforeach
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
     <div class="container bg-transparent">
         <div class="row">
-            <div class="col-12 p-0 mt-2" style="background-color: black">
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <!-- Primera imagen o video (activo) -->
-                        <div class="carousel-item active">
-                            <img class="" src="{{ asset('media/banners_productos/BANNERTemporadadelluvias.webp') }}"
-                                alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
 
-                        <!-- Segunda imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/services_img/banner_Empresa_2400x1000px.jpg') }}"
-                                alt="Banner Empresa" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-
-                        <!-- Tercera imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/banners_productos/Banner-TGOne.webp') }}" alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3 class="fw-bold fs-1">IoT</h3>
-                            </div>
-                        </div>
-
-                        <!-- Cuarta imagen -->
-                        <div class="carousel-item">
-                            <img class="" src="{{ asset('media/banners_productos/Proteccion.webp') }}"
-                                alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-
-                        <!-- Quinta imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/banners_productos/Telemetriaycontrol.webp') }}" alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <!-- Quinta imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/banners_productos/Regulacionyrespaldo.webp') }}" alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <!-- Sexta imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/banners_productos/BancodeCapacitores.webp') }}" alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-
-                        <!-- Sept imagen -->
-                        <div class="carousel-item">
-                            <img src="{{ asset('media/banners_productos/BannersIot.webp') }}" alt="Banner TGOne" />
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Indicadores -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                            aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-                            aria-label="Slide 5"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
-                            aria-label="Slide 6"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
-                            aria-label="Slide 7"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
-                            aria-label="Slide 8"></button>
-
-                    </div>
-
-                    <!-- Controles -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                {{-- <img src="{{ asset('media/services_img/banner_Empresa_2400x1000px.jpg') }}" alt="" class="img-fluid "> --}}
-                {{-- <div class="ratio ratio-21x9 ">
-                <video  autoplay loop muted>
-                    <source src="{{ url('media/home_media/FINAL_VIDEO_CORPO_TG_2k_60.mp4') }}" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-            </div> --}}
-            </div>
             <div class="row px-3 grid bg-items-menu">
                 <div class="col-12">
                     <h1 class="fw-bolder fs-1 my-2 text-center text-dark">Familia Total Ground</h1>
-                    <p class="fw-light fs-6 text-center text-dark">Encuentra la familia de Total Ground que más convenga
-                        para
-                        tu proyecto.</p>
+                    <p class="fw-light fs-6 text-center text-dark">Encuentra la familia de Total Ground que más convenga para tu proyecto.</p>
+
+                    <!-- Primera Fila -->
                     <ul class="row list-unstyled justify-content-center">
-                        <!-- Primera Fila con 5 elementos -->
-                        <li class="col-6 col-md-6 col-lg-2 my-1">
-                            <a href="{{ route('proteccion.index', ['categoria_slug' => 'tierras-fisicas']) }}">
+                        @foreach($familias as $familia)
+                        <li class="col-6 col-md-6 col-lg-{{ $loop->last ? '6' : '2' }} my-3">
+                            <a href="{{ route('familias.showFamilia', ['slug' => $familia->slug]) }}" class="text-decoration-none">
                                 <div class="menu-item_s bg-body-tertiary text-center">
                                     <div class="menu-content">
-                                        <img src="{{ 'media/icons/Tierras-Físicas.png' }}" alt="Protección"
-                                            class="img-container_s">
-                                        <span class="menu-text">Protección</span>
+                                        <!-- Usando la columna 'icono' para la ruta de la imagen -->
+                                        <img src="http://127.0.0.1:8000/storage/{{ $familia->icono }}" alt="{{ $familia->nombre }}" class="img-container_s">
+                                        <span class="menu-text">{{ $familia->nombre }}</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
-
-                        <li class="col-6 col-md-6 col-lg-2 my-1">
-                            <a href="{{ route('general.show', ['table' => 'telemetria_control', 'slug' => 'total-view-tov452']) }}"
-                                class="text-decoration-none">
-                                <div class="menu-item_s bg-body-tertiary text-center">
-                                    <div class="menu-content">
-                                        <img src="{{ 'media/icons/Smart-View.png' }}" alt="Telemetría Y Control"
-                                            class="img-container_s">
-                                        <span class="menu-text">Telemetría Y Control</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="col-6 col-md-6 col-lg-2 my-1">
-                            <a href="{{ route('respaldo_regulacion.ups.index', ['table' => 'respaldo_regulacion', 'slug' => 'gamma-600-1000-2000']) }}"
-                                class="text-decoration-none">
-                                <div class="menu-item_s bg-body-tertiary text-center">
-                                    <div class="menu-content">
-                                        <img src="{{ 'media/icons/Filtros-Armonicas.png' }}" alt="Regulación Y Respaldo"
-                                            class="img-container_s">
-                                        <span class="menu-text">Regulación Y Respaldo</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="col-6 col-md-6 col-lg-2 my-1">
-                            <a href="{{ route('general.show', ['table' => 'banco_capacitores', 'slug' => 'banco-de-capacitores']) }}"
-                                class="text-decoration-none">
-                                <div class="menu-item_s bg-body-tertiary text-center">
-                                    <div class="menu-content">
-                                        <img src="{{ 'media/icons/Banco-Capacitores.png' }}" alt="Banco de Capacitores"
-                                            class="img-container_s">
-                                        <span class="menu-text">Banco de Capacitores</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="col-6 col-md-6 col-lg-2 my-1">
-                            <a href="{{ route('general.show', ['table' => 'infraestructura', 'slug' => 'tg-tz-30']) }}"
-                                class="text-decoration-none">
-                                <div class="menu-item_s bg-body-tertiary text-center">
-                                    <div class="menu-content">
-                                        <img src="{{ 'media/icons/Torres-Arriostradas.png' }}" alt="Infraestructura"
-                                            class="img-container_s">
-                                        <span class="menu-text">Infraestructura</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <!-- Segunda fila con 1 elemento centrado -->
-                    <ul class="row list-unstyled justify-content-center my-2">
-                        <li class="col-12 col-md-6 col-lg-2">
-                            <a href="{{ route('general.show', ['table' => 'tg_one', 'slug' => 'tg-one']) }}"
-                                class="text-decoration-none">
-                                <div class="menu-item_s bg-body-tertiary text-center">
-                                    <div class="menu-content">
-                                        <img src="{{ 'media/icons/TGOne-Logo.png' }}" alt="TG ONE"
-                                            class="img-container_s">
-                                        <span class="menu-text">TG ONE</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+                    @endforeach
                     </ul>
                 </div>
             </div>
@@ -206,21 +74,34 @@
                     <div class="row justify-content-between py-4">
                         @php
                             $destacados = [
-                                ['image' => 'Proteccion.webp', 'title' => 'Protección', 'alt' => 'Protección de equipos'],
-                                ['image' => 'Regulacion y respaldo.webp', 'title' => 'Regulación y respaldo', 'alt' => 'Regulación y respaldo de energía'],
-                                ['image' => 'Telemetria y control.webp', 'title' => 'Telemetría y control', 'alt' => 'Telemetría y control de dispositivos'],
+                                [
+                                    'image' => 'Proteccion.webp',
+                                    'title' => 'Protección',
+                                    'alt' => 'Protección de equipos',
+                                ],
+                                [
+                                    'image' => 'Regulacion y respaldo.webp',
+                                    'title' => 'Regulación y respaldo',
+                                    'alt' => 'Regulación y respaldo de energía',
+                                ],
+                                [
+                                    'image' => 'Telemetria y control.webp',
+                                    'title' => 'Telemetría y control',
+                                    'alt' => 'Telemetría y control de dispositivos',
+                                ],
                             ];
                         @endphp
 
-                        @foreach($destacados as $destacado)
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <article class="card text-bg-dark p-0">
-                                <img src="{{ asset('media/'.$destacado['image']) }}" class="card-img" alt="{{ $destacado['alt'] }}">
-                                <div class="card-img-overlay d-flex justify-content-end align-items-end">
-                                    <a href="#" class="btn btn-light text-dark stretched-link">ver más</a>
-                                </div>
-                            </article>
-                        </div>
+                        @foreach ($destacados as $destacado)
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <article class="card text-bg-dark p-0">
+                                    <img src="{{ asset('media/' . $destacado['image']) }}" class="card-img"
+                                        alt="{{ $destacado['alt'] }}">
+                                    <div class="card-img-overlay d-flex justify-content-end align-items-end">
+                                        <a href="#" class="btn btn-light text-dark stretched-link">ver más</a>
+                                    </div>
+                                </article>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -233,7 +114,10 @@
                             <span class="fs-5 fw-medium h3_s">Capacitaciones</span>
                         </div>
                         <h2 class="fw-bold fs-2 text-dark">¡Nos vemos en las siguientes capacitaciones!</h2>
-                        <p class=" fw-regular text-dark">Comunicate con nosotros para revisar la <b>disponibilidad.</b>  <br> Consulta a un asesor para conocer los costos y beneficios que tu orgnizacion puede lograr al capacitarse y certificarse de la mano de nuestro gran equipo de ingenieros <b>Totalground.</b></p>
+                        <p class=" fw-regular text-dark">Comunicate con nosotros para revisar la <b>disponibilidad.</b>
+                            <br> Consulta a un asesor para conocer los costos y beneficios que tu orgnizacion puede lograr
+                            al capacitarse y certificarse de la mano de nuestro gran equipo de ingenieros
+                            <b>Totalground.</b></p>
                         <div class="d-grid">
                             <button class="btn btn-secondary btn-block">Da click aqui para ver más informacion</button>
                         </div>
@@ -242,7 +126,8 @@
                 <div class="col-6">
                     <div class="card shadow-lg d-flex flex-row overflow-hidden" style="border-radius: 20px;">
                         <!-- Left Section -->
-                        <div class="d-flex flex-column justify-content-between p-4 text-white bg-red-intenso" style="min-width: 150px;">
+                        <div class="d-flex flex-column justify-content-between p-4 text-white bg-red-intenso"
+                            style="min-width: 150px;">
                             <div>
                                 <h6 class="text-uppercase">Capacitacion</h6>
                                 <h4 class="fw-bold">Protección Avanzada para Transformadores de Subestación</h4>
