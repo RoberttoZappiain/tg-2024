@@ -63,8 +63,9 @@
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <div class="ms-4">
-                <img src="{{ asset('media/logo-tg-w-sm.png') }}" class="rounded mx-auto d-block w-50 "
-                    alt="logo total vertical">
+                <a href="{{route('home.show')}}">
+                    <img src="{{ asset('media/logo-tg-lg.webp') }}" class="rounded h-100 img-fluid " alt="logo total vertical">
+                </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -118,14 +119,50 @@
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Levantamientos</li>
-                            <li class="list-group-item">Diseño de Proyectos</li>
-                            <li class="list-group-item">Calculos de Proyectos</li>
-                            <li class="list-group-item">Toma de Mediciones de entrega de obra</li>
-                            <li class="list-group-item">Estudios de Resisitividad de Terreno</li>
-                            <li class="list-group-item">Análisis de Puntos de Riesgo en Instalaciones E.</li>
-                            <li class="list-group-item">Elaboracion Proyectos de Ahorro de Energia</li>
-                            <li class="list-group-item">Estudios de Calidad de Energia</li>
+                            <li class="list-group-item">
+                                <a href="{{ url('servicios/levantamientos?tab=list-lev') }}"
+                                class="accordion-button collapsed no-icon">
+                                Levantamientos
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ url('servicios/levantamientos?tab=list-proyect') }}"
+                                class="accordion-button collapsed no-icon">
+                                Diseño de Proyectos
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ url('servicios/levantamientos?tab=list-calcu') }}"
+                                class="accordion-button collapsed no-icon">
+                                Calculos de Proyectos
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ url('servicios/levantamientos?tab=list-medicion') }}"
+                                class="accordion-button collapsed no-icon">
+                                Toma de Mediciones de entrega de obra
+                                </a>
+                            </li>
+                            <li class="list-group-item"><a href="{{ url('servicios/levantamientos?tab=list-resis') }}"
+                                class="accordion-button collapsed no-icon">
+                                Estudios de Resisitividad de Terreno
+                                </a>
+                            </li>
+                            <li class="list-group-item"><a href="{{ url('servicios/levantamientos?tab=list-inst') }}"
+                                class="accordion-button collapsed no-icon">
+                                Análisis de Puntos de Riesgo en Instalaciones E.
+                                </a>
+                            </li>
+                            <li class="list-group-item"><a href="{{ url('servicios/levantamientos?tab=list-energy') }}"
+                                class="accordion-button collapsed no-icon">
+                                Elaboración de Proyectos de Ahorro de Energía
+                                </a>
+                            </li>
+                            <li class="list-group-item"><a href="{{ url('servicios/levantamientos?tab=list-ec') }}"
+                                class="accordion-button collapsed no-icon">
+                                Estudios de Calidad de Energia
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -141,14 +178,52 @@
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Protección</li>
-                            <li class="list-group-item">Telemetría y Control</li>
-                            <li class="list-group-item">Regulación y Respaldo</li>
-                            <li class="list-group-item">Iluminacion</li>
-                            <li class="list-group-item">Infraestructura</li>
-                            <li class="list-group-item">Refrigeración</li>
-                            <li class="list-group-item">Banco de Capacitores</li>
-                            <li class="list-group-item">TG ONE</li>
+                            <li class="list-group-item">
+                                <a href="{{ route('familias.showFamilia', ['slug' => 'sistemas-de-puesta-a-tierra']) }}"
+                                class="{{ request()->slug == 'sistemas-de-puesta-a-tierra' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Sistemas de Tierra Física
+                                </a></li>
+                            <li class="list-group-item">
+                                <a href="{{ route('familias.showFamilia', ['slug' => 'sistemas-de-pararrayos']) }}"
+                                class="{{ request()->slug == 'sistemas-de-pararrayos' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Sistemas de Pararayos
+                                </a></li>
+                            <li class="list-group-item">
+                                <a href="{{ route('familias.showFamilia', ['slug' => 'safe-connector']) }}"
+                                class="{{ request()->slug == 'safe-connector' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Safe Connector
+                                </a></li>
+                            <li class="list-group-item">
+                                <a href="{{ route('familias.showFamilia', ['slug' => 'techfussion']) }}"
+                                class="{{ request()->slug == 'techfussion' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Techfussion
+                                </a></li>
+                            <li class="list-group-item">
+                                <a href="{{ route('familias.showFamilia', ['slug' => 'torres-arriostradas']) }}"
+                                    class="{{ request()->slug == 'torres-arriostradas' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                    Torres Arriostradas
+                                </a></li>
+                            <li class="list-group-item"><a href="{{ route('familias.showFamilia', ['slug' => 'supresores']) }}"
+                                class="{{ request()->slug == 'supresores' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Supresores
+                                </a></li>
+                            <li class="list-group-item"><a href="{{ route('familias.showFamilia', ['slug' => 'telemetria-y-control']) }}"
+                                class="{{ request()->slug == 'telemetria-y-control' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Telemetria y Control
+                                </a></li>
+                            <li class="list-group-item"><a href="{{ route('familias.showFamilia', ['slug' => 'regulador-360']) }}"
+                                    class="{{ request()->slug == 'regulador-360' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                    Regulador 360
+                                </a></li>
+                            <li class="list-group-item"><a href="{{ route('familias.showFamilia', ['slug' => 'bancos-de-capacitores']) }}"
+                                class="{{ request()->slug == 'bancos-de-capacitores' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                Banco de Capacitores
+                                </a></li>
+                            <li class="list-group-item"><a href="{{ route('familias.showFamilia', ['slug' => 'iiot-tgone']) }}"
+                                class="{{ request()->slug == 'iiot-tgone' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                IIOT - TGONE
+                                </a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -261,16 +336,10 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="d-flex flex-column mb-3">
-        <div class="p-2 text-center lh-1 mt-2 mb-1 p-2">
-            <span class="fw-medium">Calle Volcán Vesubio #5145, El Collí Urbano, 45070, Zapopan, Jalisco.</span>
-        </div>
-        <div class="p-2">Flex item 2</div>
-        <div class="p-2">Flex item 3</div>
-    </div> --}}
     <div class="bgII d-flex  justify-content-around" style="height: 100px">
-        <img src="{{ asset('media/logo-tg-lg.webp') }}" class="rounded h-100 img-fluid " alt="logo total vertical">
+        <a href="{{route('home.show')}}">
+            <img src="{{ asset('media/logo-tg-lg.webp') }}" class="rounded h-100 img-fluid " alt="logo total vertical">
+        </a>
         <div class="d-flex flex-column py-1">
             <ul class="list-group list-group-horizontal">
                 <a class="text-links {{ isActiveRoute('quienes-somos.show') }}"
@@ -299,7 +368,7 @@
                             <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-lev') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-lev') }}"
                                             class="accordion-button collapsed no-icon">
                                             Levantamientos
                                         </a>
@@ -307,7 +376,7 @@
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-proyect') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-proyect') }}"
                                             class="accordion-button collapsed no-icon">
                                             Diseño de Proyectos
                                         </a>
@@ -315,15 +384,15 @@
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-calcu') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-calcu') }}"
                                             class="accordion-button collapsed no-icon">
-                                            Diseño de Proyectos
+                                            Calculos de Proyectos
                                         </a>
                                     </h2>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-medicion') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-medicion') }}"
                                             class="accordion-button collapsed no-icon">
                                             Toma de Mediciones de entrega de obra
                                         </a>
@@ -331,7 +400,7 @@
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-resis') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-resis') }}"
                                             class="accordion-button collapsed no-icon">
                                             Estudios de Resisitividad de Terreno
                                         </a>
@@ -339,249 +408,134 @@
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-inst') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-inst') }}"
                                             class="accordion-button collapsed no-icon">
                                             Análisis de Puntos de Riesgo en Instalaciones E.
                                         </a>
-
                                     </h2>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos#list-ec') }}"
+                                        <a href="{{ url('servicios/levantamientos?tab=list-energy') }}"
+                                            class="accordion-button collapsed no-icon">
+                                            Elaboración de Proyectos de Ahorro de Energía
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a href="{{ url('servicios/levantamientos?tab=list-ec') }}"
                                             class="accordion-button collapsed no-icon">
                                             Estudios de Calidad de Energia
                                         </a>
                                     </h2>
-
                                 </div>
                             </div>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="btn btn-dark dropdown-toggle custom-dropdown bg-transparent border-0" href="#"
-                            id="mainDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            id="mainDropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             Productos
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="dropdown-icon">
-                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                 <path
                                     d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                             </svg>
                         </a>
-                        <ul class="dropdown-menu rounded-5 border-0" aria-labelledby="mainDropdownMenuButton">
-                            <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Protección
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('proteccion.index', ['categoria_slug' => 'tierras-fisicas']) }}"
-                                                       class="{{ request()->categoria_slug == 'tierras-fisicas' ? 'active-link' : '' }}">
-                                                        Sistemas de Tierra Física
-                                                    </a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('proteccion.index', ['categoria_slug' => 'pararrayos']) }}"
-                                                       class="{{ request()->categoria_slug == 'pararrayos' ? 'active-link' : '' }}">
-                                                        Sistemas de Pararrayos
-                                                    </a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('proteccion.index', ['categoria_slug' => 'supresores']) }}"
-                                                       class="{{ request()->categoria_slug == 'supresores' ? 'active-link' : '' }}">
-                                                        Supresores de Picos Transitorios
-                                                    </a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                            </ul>
-                                        </div>
+                        <ul class="dropdown-menu rounded-4 border-0 bg-transparent" aria-labelledby="mainDropdownMenuButton2">
+                            <div class="accordion accordion-flush d-flex " data-bs-theme="dark"
+                                id="accordionFlushExample">
+                                <div class="flex-row">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'sistemas-de-puesta-a-tierra']) }}"
+                                                class="{{ request()->slug == 'sistemas-de-puesta-a-tierra' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Sistemas de Tierra Física
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'sistemas-de-pararrayos']) }}"
+                                                class="{{ request()->slug == 'sistemas-de-pararrayos' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Sistemas de Pararayos
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'safe-connector']) }}"
+                                                class="{{ request()->slug == 'safe-connector' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Safe Connector
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'techfussion']) }}"
+                                                class="{{ request()->slug == 'techfussion' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Techfussion
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'torres-arriostradas']) }}"
+                                                class="{{ request()->slug == 'torres-arriostradas' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Torres Arriostradas
+                                            </a>
+                                        </h2>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Telemetría y Control
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'telemetria_control', 'slug' => 'total-view-tov452']) }}">Total View</a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'telemetria_control', 'slug' => 'total-monitor']) }}">Total Monitor</a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'telemetria_control', 'slug' => 'smart-view-gsm']) }}">Smart View GSM</a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'telemetria_control', 'slug' => 'smart-view-ethernet']) }}">Smart View Ethernet</a>
-                                                </li>
-                                                <hr class="dropdown-divider mx-1 hr-d">
-
-                                            </ul>
-                                        </div>
+                                <div class="flex-row">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'supresores']) }}"
+                                                class="{{ request()->slug == 'supresores' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Supresores
+                                            </a>
+                                        </h2>
                                     </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Regulación y Respaldo
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <li class="bg-li">
-                                                    <a href="{{ route('respaldo_regulacion.ups.index') }}" class="text-decoration-none">UPS</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                                <li class="bg-li">
-                                                    <a href="{{ route('respaldo_regulacion.reguladores.index') }}" class="text-decoration-none">Reguladores</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                            </ul>                                        </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'telemetria-y-control']) }}"
+                                                class="{{ request()->slug == 'telemetria-y-control' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Telemetria y Control
+                                            </a>
+                                        </h2>
                                     </div>
-                                </div>
-                                {{-- <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Iluminacion
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <li class="bg-li">luminarias Uso Interior</li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                                <li class="bg-li">Luminarias Uso Exterior</li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'regulador-360']) }}"
+                                                class="{{ request()->slug == 'regulador-360' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Regulador 360
+                                            </a>
+                                        </h2>
                                     </div>
-                                </div> --}}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Infraestructura
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.index', ['table' => 'infraestructura']) }}">Torres Arriostradas</a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'bancos-de-capacitores']) }}"
+                                                class="{{ request()->slug == 'bancos-de-capacitores' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                Banco de Capacitores
+                                            </a>
+                                        </h2>
                                     </div>
-                                </div>
-                                {{-- <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Refrigeración
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseSix" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <li class="bg-li">Aire Acondicionado <code>Tipo Mochila</code>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                                <li class="bg-li">Aire Acondicionado <code>Unidades Condensadoras
-                                                        de Refrigeración </code></li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Banco de Capacitores
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseSeven" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <ul class="list-group list-group-flush list-unstyled">
-                                                <!-- Banco de Capacitores -->
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'banco_capacitores', 'slug' => 'banco-de-capacitores']) }}" class="text-decoration-none">
-                                                        Banco de Capacitores
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-
-                                                <!-- Banco de Capacitores Fijo -->
-                                                <li class="bg-li">
-                                                    <a href="{{ route('general.show', ['table' => 'banco_capacitores', 'slug' => 'banco-de-capacitores-fijo']) }}" class="text-decoration-none">
-                                                        Banco de Capacitores Fijo
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider mx-1 hr-d">
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <a href="{{ route('familias.showFamilia', ['slug' => 'iiot-tgone']) }}"
+                                                class="{{ request()->slug == 'iiot-tgone' ? 'active-link' : '' }} accordion-button collapsed no-icon">
+                                                IIOT - TGONE
+                                            </a>
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
+                        </ul>
                     </li>
+                    <li type="button" class="text-links btn-contact sh-r rounded" data-bs-toggle="modal"
+                        data-bs-target="#myModal">CONTACTANOS</li>
                 </ul>
 
-                <li type="button" class="text-links btn-contact sh-r rounded" data-bs-toggle="modal"
-                    data-bs-target="#myModal">CONTACTANOS</li>
-                </ul>
             </div>
         </div>
     </div>

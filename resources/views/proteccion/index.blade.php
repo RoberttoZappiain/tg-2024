@@ -85,14 +85,6 @@
                                                         <h5 class="card-title mt-3">{{ $producto->nombre_kit }}</h5>
 
                                                     </div>
-                                                    {{-- <span
-                                                        class="card-title fw-bolder text-dark text-uppercase">{{ $producto->nombre_kit }}</span>
-                                                    <span
-                                                        class="badge bg-secondary text-white">{{ $producto->nombre_subcategoria }}</span>
-                                                    <!-- Badge gris -->
-                                                    <hr>
-                                                    <span
-                                                        class="fw-light text-dark card-text">{{ $producto->contenido }}</span> --}}
                                                 </div>
                                             </div>
                                         </a>

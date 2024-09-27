@@ -1681,10 +1681,53 @@ body {
     color: #cccccc; /* Color gris para el enlace activo */
     font-weight: bold; /* Opcional: si quieres que el enlace activo tenga un estilo más resaltado */
 }
-li a {
+
+.dropdown-custom-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff; /* Fondo blanco del menú */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0; /* Elimina márgenes */
+}
+
+.dropdown-custom-item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Elimina el padding extra */
+}
+
+.dropdown-custom-item a {
     display: block;
-    width: 100%;
-    height: 100%;
     text-decoration: none;
+    padding: 10px;
+    background-color: #f8f9fa; /* Fondo claro para los ítems inactivos */
+    border-radius: 5px;
+    text-align: center;
+    color: #000; /* Color del texto */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box; /* Asegura que el padding no expanda el ancho del ítem */
+}
+
+.dropdown-custom-item a:hover {
+    background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+}
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0; /* Elimina el margen alrededor del menú */
+    border: none; /* Elimina los bordes predeterminados */
+}
+
+.nav-item .dropdown-toggle {
+    margin-right: 0; /* Elimina cualquier margen derecho */
+}
+
+.nav-item .dropdown-menu {
+    min-width: auto; /* Asegura que el menú no tenga un ancho mínimo que lo desplace */
+    right: 0; /* Alinea el menú con el botón de la derecha */
+    left: auto; /* Asegura que no haya desplazamiento hacia la izquierda */
 }
 

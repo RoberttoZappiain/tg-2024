@@ -61,16 +61,43 @@
                                     <li
                                         class="list-group-items-menu d-flex justify-content-between align-items-center p-2 rounded-2 m-1">
                                         <!-- Enlace a la subcategoría utilizando su slug -->
-                                        <a href="?subcategoria={{ $subcategoria->slug }}"
-                                            class="text-decoration-none {{ $activeSubcategoria == $subcategoria->slug ? 'active-filter' : '' }}">
-                                            {{ $subcategoria->nombre }} <!-- Muestra el nombre de la subcategoría -->
+                                        @if ($subcategoria->productos_count == 0)
+                                            <!-- Redirigir a la nueva ruta familias.showWithoutSlug cuando productos_count es 0 -->
+                                            <a href="{{ route('familias.showSubcategoria', [
+                                                'categoria_slug' => $subcategoria->categoria_slug,
+                                                'subcategoria_slug' => $subcategoria->slug
+                                            ]) }}"
+                                           class="text-decoration-none zoom-img-category">
+                                           {{ $subcategoria->nombre }} <!-- Muestra el nombre de la subcategoría -->
                                         </a>
+                                        @else
+                                            <!-- Redirigir al enlace original si productos_count es mayor que 0 -->
+                                            <a href="?subcategoria={{ $subcategoria->slug }}"
+                                                class="text-decoration-none {{ $activeSubcategoria == $subcategoria->slug ? 'active-filter' : '' }}">
+                                                {{ $subcategoria->nombre }} <!-- Muestra el nombre de la subcategoría -->
+                                            </a>
+                                        @endif
 
-                                        <!-- Mostrar la categoría a la que pertenece la subcategoría -->
-                                        <span class="badge justify-content-between p-2"
-                                            style="background-color: var(--tg-color-rojo-oscuro)">
-                                            {{ $subcategoria->productos_count }} <!-- Muestra la cantidad de productos -->
-                                        </span>
+                                        @if ($subcategoria->productos_count == 0)
+                                            <span class="badge justify-content-between p-2 bg-white"
+                                                style="background-color: var(--tg-color-rojo-oscuro);">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                                    height="10">
+                                                    <!-- Ícono de Font Awesome -->
+                                                    <path
+                                                        d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288l111.5 0L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7l-111.5 0L349.4 44.6z"
+                                                        fill="#8e0000" />
+                                                </svg>
+                                                <!-- Muestra el icono rayo si el contador es 0 de productos -->
+                                            </span>
+                                        @else
+                                            <!-- Mostrar la categoría a la que pertenece la subcategoría -->
+                                            <span class="badge justify-content-between p-2 "
+                                                style="background-color: var(--tg-color-rojo-oscuro)">
+                                                {{ $subcategoria->productos_count }}
+                                                <!-- Muestra la cantidad de productos -->
+                                            </span>
+                                        @endif
                                     </li>
                                 @endforeach
                             </ul>
@@ -108,8 +135,11 @@
                                 <!-- Si no hay productos, mostrar subcategorías en su lugar -->
                                 @foreach ($subcategorias as $subcategoria)
                                     <div class="card bgs mx-1 my-2" style="max-width:480px;">
-                                        <a href="?subcategoria={{ $subcategoria->slug }}"
-                                            class="text-decoration-none zoom-img-category">
+                                        <a href="{{ route('familias.showSubcategoria', [
+                                                'categoria_slug' => $subcategoria->categoria_slug,
+                                                'subcategoria_slug' => $subcategoria->slug]) }}"
+                                           class="text-decoration-none zoom-img-category">
+                                           {{ $subcategoria->nombre }} <!-- Muestra el nombre de la subcategoría -->
                                             <div class="row g-0">
                                                 <div class="col-4">
                                                     <img class="img-fluid rounded p-2"
@@ -139,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-
+                @include('carousel')
             </div>
         </div>
 

@@ -20,7 +20,7 @@ class GeneralController extends Controller
             $familias = DB::connection()->table($table)->get();
 
             // Renderizar la vista de familias con los registros
-            return view('familias.index', compact('familias'));
+            return view('familias.index', compact('familias', 'logos'));
         }
 
         // Si no es la tabla familias, usar la lógica actual
@@ -64,7 +64,7 @@ class GeneralController extends Controller
         ->where('subcategorias.id', $producto->subcategoria_id)
         ->where('productos.id', '!=', $producto->id) // Excluir el producto actual
         ->select('productos.*', 'subcategorias.slug as subcategoria_slug', 'categorias.slug as categoria_slug') // Seleccionar el slug de la categoría
-        ->limit(6)
+        ->limit(4)
         ->get();
 
             // **Nueva consulta adicional**: Obtener productos adicionales de la misma familia para la tabla comparativa
@@ -86,6 +86,62 @@ class GeneralController extends Controller
 
         // Retornar la vista con los datos necesarios para el breadcrumb
         return view('familias.show', compact('producto', 'productosRelacionados', 'logos', 'productosParaComparar'));
+    }
+
+    public function showSubcategoria($categoria_slug, $subcategoria_slug)
+    {
+        $logos = DB::connection('mysql')->table('logos_familia_tg')->get();
+
+        // Obtener la categoría basada en el slug
+        $categoria = DB::table('categorias')
+            ->where('slug', $categoria_slug)
+            ->first();
+
+        // Verificar si la categoría existe
+        if (!$categoria) {
+            abort(404, 'Categoría no encontrada');
+        }
+
+        // Obtener la subcategoría basada en el slug y la categoria_id
+        $subcategoria = DB::table('subcategorias')
+            ->where('slug', $subcategoria_slug)
+            ->where('categoria_id', $categoria->id)
+            ->first();
+
+        // Verificar si la subcategoría existe
+        if (!$subcategoria) {
+            abort(404, 'Subcategoría no encontrada');
+        }
+
+         // Obtener la familia relacionada con la categoría
+        $familia = DB::table('familias')
+        ->join('categorias', 'familias.id', '=', 'categorias.familia_id')
+        ->where('categorias.id', $categoria->id)
+        ->select('familias.*')
+        ->first();
+
+        $subcategoriasRelacionadas = DB::table('subcategorias')
+        ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id') // Unir con categorías para obtener el slug
+        ->where('subcategorias.categoria_id', $subcategoria->categoria_id) // Obtener subcategorías de la misma categoría
+        ->where('subcategorias.id', '!=', $subcategoria->id) // Excluir la subcategoría actual
+        ->select('subcategorias.*', 'categorias.slug as categoria_slug') // Seleccionar los campos necesarios, incluyendo el slug de la categoría
+        ->limit(4) // Limitar la cantidad de subcategorías relacionadas
+        ->get();
+
+        $subcategoriasParaComparar = DB::table('subcategorias')
+        ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+        ->where('categorias.familia_id', $familia->id) // Obtener subcategorías que pertenecen a la misma familia
+        ->where('subcategorias.id', '!=', $subcategoria->id) // Excluir la subcategoría actual
+        ->whereNotIn('subcategorias.id', $subcategoriasRelacionadas->pluck('id')) // Excluir las subcategorías relacionadas ya obtenidas
+        ->select(
+            'subcategorias.*',
+            'categorias.nombre as nombre_categoria',
+            'categorias.slug as categoria_slug'
+        )
+        ->limit(4) // Limitar el número de subcategorías para comparar
+        ->get();
+        // Si todo está bien, devolver la vista
+        return view('familias.show_category', compact('categoria', 'subcategoria', 'familia', 'subcategoriasRelacionadas', 'subcategoriasParaComparar', 'logos'));
     }
     // Resolver el modelo basado en la tabla
     protected function resolveModel($table)
@@ -116,10 +172,12 @@ class GeneralController extends Controller
 
         return $views[$table] ?? abort(404);
     }
+
     public function showFamilia($slug)
     {
         // Obtener la familia por el slug
         $familia = DB::table('familias')->where('slug', $slug)->first();
+        $logos = DB::connection('mysql')->table('logos_familia_tg')->get();
 
         // Si no se encuentra la familia, lanzar un error 404
         abort_if(!$familia, 404, 'Familia no encontrada');
@@ -158,6 +216,6 @@ class GeneralController extends Controller
             ->paginate(12);
 
         // Retornar la vista con los datos
-        return view('familias.index', compact('familia', 'subcategorias', 'productos', 'activeSubcategoria'));
+        return view('familias.index', compact('familia', 'subcategorias', 'productos', 'activeSubcategoria', 'logos'));
     }
 }

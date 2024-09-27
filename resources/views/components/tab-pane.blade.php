@@ -3,7 +3,7 @@
         <div class="p-2 w-100">
             <h2 class="fs-2 fw-light text-dark tracking-in-expand">{{ $title }}</h2>
         </div>
-        <div class="p-2 flex-shrink-1"><i class="{{ $icon }}" style="background-color: transparent !important;"></i></div> 
+        <div class="p-2 flex-shrink-1"><i class="{{ $icon }}" style="background-color: transparent !important;"></i></div>
     </div>
     <hr class="btn-contact border-2  ">
     <p class="fs-6 fw-regular text-dark">{{ $content }}</p>

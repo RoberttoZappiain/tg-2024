@@ -1,10 +1,9 @@
 @extends('welcome')
-
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="text-uppercase text-start text-dark fw-semibold my-3">{{ $producto->nombre }}</h1>
+                <h1 class="text-uppercase text-start text-dark fw-semibold my-3">{{ $subcategoria->nombre }}</h1>
                 <!-- Breadcrumb -->
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -13,32 +12,27 @@
                         </li>
                         <!-- Enlace a la familia -->
                         <li class="breadcrumb-item d-flex">
-                            <a href="{{ route('familias.showFamilia', ['slug' => $producto->familia_slug]) }}">
-                                {{ $producto->nombre_familia }}
+                            <a href="{{ route('familias.showFamilia', ['slug' => $familia->nombre]) }}">
+                                {{ $familia->nombre }}
                             </a>
                         </li>
                         <!-- Enlace a la categoría -->
                         <li class="breadcrumb-item d-flex">
-                            <a href="{{ route('familias.showFamilia', ['slug' => $producto->familia_slug]) }}">
-                                {{ $producto->nombre_categoria }}
+                            <a href="{{ route('familias.showFamilia', ['slug' => $familia->nombre]) }}">
+                                {{ $categoria->nombre }}
                             </a>
                         </li>
+
                         <!-- Enlace a la subcategoría -->
                         <li class="breadcrumb-item d-flex">
-                            <a href="{{ route('familias.showFamilia', ['slug' => $producto->familia_slug]) }}">
-                                {{ $producto->nombre_subcategoria }}
+                            <a href="{{ route('familias.showFamilia', ['slug' => $familia->nombre]) }}">
+                                {{ $subcategoria->nombre }}
                             </a>
-                        </li>
-                        <!-- Producto actual (breadcrumb activo) -->
-                        <li class="breadcrumb-item active d-flex" aria-current="page">
-                            {{ $producto->nombre }}
                         </li>
                     </ol>
                 </nav>
                 <!-- Fin del Breadcrumb -->
-
                 <hr class="rounded border-secondary border-4 opacity-75">
-
                 <!-- Detalles del producto -->
                 <div class="row">
                     <div class="col-lg-2 ">
@@ -99,11 +93,11 @@
                     </div>
                     <div class="col-12 col-lg-4">
                         <figure class="figure">
-                            <img src="http://127.0.0.1:8000/storage/{{ $producto->url_img_1 }}"
+                            <img src="http://127.0.0.1:8000/storage/{{ $subcategoria->url_img_1 }}"
                                 class="figure-img img-fluid rounded p-5 zoom-img" alt="...">
                             <figcaption class="figure-caption text-end"> <span class="text-uppercase"></span> <br> Medidas
                                 del empaque:
-                                {{ $producto->medida_empaq }}.
+                                {{ $subcategoria->medida_empaq }}.
                             </figcaption>
                         </figure>
                     </div>
@@ -122,31 +116,31 @@
                             <tbody>
                                 <tr>
                                     <td class="fw-regular"><strong class="fw-bolder text-center">Rango:</strong></td>
-                                    <td class="text-uppercase">{{ $producto->rango }}</td>
+                                    <td class="text-uppercase">{{ $subcategoria->rango }}</td>
                                 </tr>
                                 <tr>
                                     <td class="fw-regular"><strong class="fw-bolder">Alimentacion:</strong></td>
-                                    <td>{{ $producto->alimentacion }}</td>
+                                    <td>{{ $subcategoria->alimentacion }}</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="fw-bolder">Dimensiones:</strong></td>
-                                    <td>{{ $producto->dimensiones }}</td>
+                                    <td>{{ $subcategoria->dimensiones }}</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="fw-bolder">Material:</strong></td>
-                                    <td>{{ $producto->material }}</td>
+                                    <td>{{ $subcategoria->material }}</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="fw-bolder">Caracteristicas:</strong></td>
-                                    <td>{{ $producto->caracteristicas }}</td>
+                                    <td>{{ $subcategoria->caracteristicas }}</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="fw-bolder">Garantía:</strong></td>
-                                    <td>{{ $producto->garantia }}</td>
+                                    <td>{{ $subcategoria->garantia }}</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="fw-bolder">De la familia:</strong></td>
-                                    <td>{{ $producto->nombre_familia }}</td>
+                                    <td>{{ $familia->nombre }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -156,16 +150,17 @@
                                     <div id="flush-collapseOne" class="accordion-collapse"
                                         data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
-                                            <div class="flip-book-container" src="{{ $producto->url_ficha_tecnica }}">
+                                            <div class="flip-book-container"
+                                                src="{{ $subcategoria->url_ficha_tecnica }}">
 
                                             </div>
                                             {{-- <div id="pdf-container">
-                                            <object data="{{ $pdfPath }}" type="application/pdf"
-                                                width="100%" height="100%">
-                                                <p>Tu navegador no soporta PDFs. Descarga el PDF para verlo: <a
-                                                        href="{{ $pdfPath }}">Descargar PDF</a>.</p>
-                                            </object>
-                                        </div> --}}
+                                    <object data="{{ $pdfPath }}" type="application/pdf"
+                                        width="100%" height="100%">
+                                        <p>Tu navegador no soporta PDFs. Descarga el PDF para verlo: <a
+                                                href="{{ $pdfPath }}">Descargar PDF</a>.</p>
+                                    </object>
+                                </div> --}}
 
                                         </div>
                                     </div>
@@ -179,10 +174,10 @@
                                         data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
                                             <div id="pdf-container">
-                                                <object data="{{ $producto->url_manual }}" type="application/pdf"
+                                                <object data="{{ $subcategoria->url_manual }}" type="application/pdf"
                                                     width="100%" height="100%">
                                                     <p>Tu navegador no soporta PDFs. Descarga el PDF para verlo: <a
-                                                            href="{{ $producto->url_manual }}">Descargar PDF</a>.</p>
+                                                            href="{{ $subcategoria->url_manual }}">Descargar PDF</a>.</p>
                                                 </object>
                                             </div>
 
@@ -209,9 +204,9 @@
                 <hr class="rounded border-secondary border-4 opacity-75">
                 <div class="row rounded-3 p-3 my-2 bg-light">
                     <h2 class="fs-2 fw-normal mb-4">Productos relacionados con <span
-                            class="text-lowercase">{{ $producto->nombre_subcategoria }}</span></h2>
+                            class="text-lowercase">{{ $subcategoria->nombre }}</span></h2>
 
-                    @foreach ($productosRelacionados as $relacionado)
+                    @foreach ($subcategoriasRelacionadas as $relacionado)
                         <div class="col-md-3 col-sm-6 mb-4 d-flex align-items-stretch">
                             <div class="card shadow-sm h-100 border-0 rounded-3">
                                 <!-- Imagen del producto -->
@@ -246,10 +241,9 @@
                                     @endif
 
                                     <!-- Botón Ver Producto respetando el diseño original -->
-                                    <a href="{{ route('familias.show', [
+                                    <a href="{{ route('familias.showSubcategoria', [
                                         'categoria_slug' => $relacionado->categoria_slug,
-                                        'subcategoria_slug' => $relacionado->subcategoria_slug,
-                                        'slug' => $relacionado->slug,
+                                        'subcategoria_slug' => $relacionado->slug,
                                     ]) }}"
                                         class="btn btn-contact mt-auto align-self-center w-100 p-2 rounded-pill text-uppercase"
                                         style="background-color: var(--tg-color-rojo-oscuro); color: white;">Ver
@@ -267,10 +261,10 @@
                                 <td></td>
                                 <td class="bg-light">
                                     <img src="http://127.0.0.1:8000/storage/{{ $producto->url_img_1 ?? 'ruta/por/defecto.jpg' }}"
-                                        alt="{{ $producto->nombre }}" class="img-thumbnail"
+                                        alt="{{ $subcategoria->nombre }}" class="img-thumbnail"
                                         style="width: 100px; height: auto;">
                                 </td>
-                                @foreach ($productosParaComparar as $comparar)
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>
                                         <img src="http://127.0.0.1:8000/storage/{{ $comparar->url_img_1 ?? 'ruta/por/defecto.jpg' }}"
                                             alt="{{ $comparar->nombre }}" class="img-thumbnail"
@@ -283,20 +277,20 @@
                             <tr class="py-5">
                                 <th></th>
                                 <!-- Producto que se está consultando, resaltado -->
-                                <th class="text-dark fw-bold fs-5">{{ $producto->nombre }} <br> <span
+                                <th class="text-dark fw-bold fs-5">{{ $subcategoria->nombre }} <br> <span
                                         class="badge rounded-pill"
                                         style="background-color: var(--tg-color-rojo-oscuro)">(Producto Principal)</span>
                                 </th>
                                 <!-- Productos relacionados para comparar -->
-                                @foreach ($productosParaComparar as $comparar)
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <th class="fw-normal align-middle">{{ $comparar->nombre }}</th>
                                 @endforeach
                             </tr>
                             <!-- Comparar Descripción -->
                             <tr class="">
                                 <td><strong>Descripción</strong></td>
-                                <td class="bg-light">{{ $producto->descripcion ?? 'N/A' }}</td>
-                                @foreach ($productosParaComparar as $comparar)
+                                <td class="bg-light">{{ $subcategoria->descripcion ?? 'N/A' }}</td>
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>{{ $comparar->descripcion ?? 'N/A' }}</td>
                                 @endforeach
                             </tr>
@@ -304,8 +298,8 @@
                             <!-- Comparar Características -->
                             <tr>
                                 <td><strong>Características</strong></td>
-                                <td class="bg-light">{{ $producto->caracteristicas ?? 'N/A' }}</td>
-                                @foreach ($productosParaComparar as $comparar)
+                                <td class="bg-light">{{ $subcategoria->caracteristicas ?? 'N/A' }}</td>
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>{{ $comparar->caracteristicas ?? 'N/A' }}</td>
                                 @endforeach
                             </tr>
@@ -313,8 +307,8 @@
                             <!-- Comparar Precio -->
                             <tr>
                                 <td><strong>Precio</strong></td>
-                                <td class="bg-light text-success fw-bold">{{ $producto->precio ?? 'N/A' }}</td>
-                                @foreach ($productosParaComparar as $comparar)
+                                <td class="bg-light text-success fw-bold">{{ $subcategoria->precio ?? 'N/A' }}</td>
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td class="text-success">{{ $comparar->precio ?? 'N/A' }}</td>
                                 @endforeach
                             </tr>
@@ -322,8 +316,8 @@
                             <!-- Comparar Peso -->
                             <tr>
                                 <td><strong>Peso</strong></td>
-                                <td class="bg-light">{{ $producto->peso_pza ?? 'N/A' }}</td>
-                                @foreach ($productosParaComparar as $comparar)
+                                <td class="bg-light">{{ $subcategoria->peso_pza ?? 'N/A' }}</td>
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>{{ $comparar->peso_pza ?? 'N/A' }}</td>
                                 @endforeach
                             </tr>
@@ -331,8 +325,8 @@
                             <!-- Comparar Medida Empaque -->
                             <tr>
                                 <td><strong>Medida Empaque</strong></td>
-                                <td class="bg-light">{{ $producto->medida_empaq ?? 'N/A' }}</td>
-                                @foreach ($productosParaComparar as $comparar)
+                                <td class="bg-light">{{ $subcategoria->medida_empaq ?? 'N/A' }}</td>
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>{{ $comparar->medida_empaq ?? 'N/A' }}</td>
                                 @endforeach
                             </tr>
@@ -341,14 +335,14 @@
                             <tr>
                                 <td><strong>Ficha Técnica</strong></td>
                                 <td class="bg-light">
-                                    @if ($producto->url_ficha_tecnica)
+                                    @if ($subcategoria->url_ficha_tecnica)
                                         <a href="{{ $producto->url_ficha_tecnica }}" target="_blank"
                                             class="btn btn-info btn-sm">Ver Ficha</a>
                                     @else
                                         N/A
                                     @endif
                                 </td>
-                                @foreach ($productosParaComparar as $comparar)
+                                @foreach ($subcategoriasParaComparar as $comparar)
                                     <td>
                                         @if ($comparar->url_ficha_tecnica)
                                             <a href="{{ $comparar->url_ficha_tecnica }}" target="_blank"

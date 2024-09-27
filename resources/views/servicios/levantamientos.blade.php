@@ -5,7 +5,7 @@
         <div class="col-12 col-lg-3 mt-3">
             <h3 class="fs-4 fw-regular text-start">SERVICIOS TOTALGROUND</h3>
             <div class="list-group custom-list-group gap-1 mt-3" id="list-tab" role="tablist">
-                <a class="list-group-item custom-list-group-item rounded-3 active" id="list-lev-list" data-bs-toggle="list" href="#list-lev"
+                <a class="list-group-item custom-list-group-item rounded-3 {{ request('tab') == 'list-lev' ? 'active' : '' }}" id="list-lev-list" data-bs-toggle="list" href="#list-lev"
                     role="tab" aria-controls="list-lev"><i class="fa-solid fa-map-location-dot"></i>Acompañamiento
                     en Levantamientos</a>
                 <a class="list-group-item custom-list-group-item rounded-3" id="list-proyect-list" data-bs-toggle="list"
@@ -31,15 +31,14 @@
         </div>
         <div class="col-12 col-lg-9 mt-3 bg-secondary-subtle  rounded-3 p-3">
             <div class="tab-content" id="nav-tabContent">
-
                 <x-tab-pane id="list-lev" title="Acompañamiento en Levantamientos"
-                content="Se tendrá el apoyo en todo momento de un Ingeniero especialista de la marca con amplio conocimiento de los productos Total Ground, además contará con la información de las normas vigentes con referencia a normas Nacionales (NOM- 001-SEDE -2015, NOM-022, STPS-2012, NMX-J-549-ANSE-2005) e internacionales (NFPA 780, UNE.21186, ANSIJ-607-STD, EIA/TIA 942, IEEE 142, IEEE 1100), y podrá ayudar a definir los alcances del proyecto."
-                mainImg="media/services_img/Diseno_de_proyectos.webp" :carouselImgs="[
-                    ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Innovación'],
-                    ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Seguridad'],
-                    ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Capacidad'],
-                ]"
-                icon="fa-solid fa-map-location-dot"/>
+                    content="Se tendrá el apoyo en todo momento de un Ingeniero especialista de la marca con amplio conocimiento de los productos Total Ground, además contará con la información de las normas vigentes con referencia a normas Nacionales (NOM- 001-SEDE -2015, NOM-022, STPS-2012, NMX-J-549-ANSE-2005) e internacionales (NFPA 780, UNE.21186, ANSIJ-607-STD, EIA/TIA 942, IEEE 142, IEEE 1100), y podrá ayudar a definir los alcances del proyecto."
+                    mainImg="media/services_img/Diseno_de_proyectos.webp" :carouselImgs="[
+                        ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Innovación'],
+                        ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Seguridad'],
+                        ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Capacidad'],
+                    ]"
+                    icon="fa-solid fa-map-location-dot"/>
 
                 <x-tab-pane id="list-proyect" title="Diseño de Proyectos"
                     content="Contamos con un departamento de proyectos quienes podrán apoyarles en el cálculo y diseño de la solución más optima considerando los requerimientos y necesidades de cada sitio y aplicación tecnológica en particular."
@@ -48,7 +47,7 @@
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Seguridad'],
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Capacidad'],
                     ]"
-                    icon="fa-solid fa-compass-drafting" />
+                    icon="fa-solid fa-compass-drafting"/>
 
                     <x-tab-pane id="list-calcu" title="Elaboración de justificación técnicas y cálculos de proyectos"
                     content="Se podrá obtener información técnica de los productos o en su defecto se podrá entregar memorias de cálculo relacionado a cada proyecto en particular."
@@ -57,7 +56,7 @@
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Seguridad'],
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Capacidad'],
                     ]"
-                    icon="fa-solid fa-square-root-variable" />
+                    icon="fa-solid fa-square-root-variable"/>
 
                     <x-tab-pane id="list-medicion" title="Toma de mediciones de entrega de obra"
                     content="Finalizando la instalación de un sistema Total Ground, se sugiere la revisión para realizar una medición y así poder validar el funcionamiento del sistema, con la finalidad de que cumpla con las especificaciones y normativas el cual se entregará en un reporte con las observaciones y mejoras de las instalaciones para en su defecto poder emitir nuestra garantía."
@@ -66,7 +65,7 @@
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Seguridad'],
                         ['src' => 'media/services_img/Diseno_de_proyectos.webp', 'caption' => 'Capacidad'],
                     ]"
-                    icon="fa-solid fa-ruler-combined" />
+                    icon="fa-solid fa-ruler-combined"/>
 
                     <x-tab-pane id="list-resis" title="Estudios de resistividad de terreno"
                     content="Contamos con personal capacitado y especialistas en campo quienes podran realizar los estudios de resistividad de terreno y diseñar la solución más adecuada considerando las condiciones ambientales y los requerimientos especificos del proyecto."
@@ -258,4 +257,23 @@
         }
     }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+
+        if (tab) {
+            const tabPane = document.getElementById(tab);
+            const tabLink = document.querySelector(`[href="#${tab}"]`);
+
+            if (tabPane && tabLink) {
+                // Activar el tab-pane correspondiente
+                tabPane.classList.add('show', 'active');
+
+                // Activar el enlace correspondiente en la lista de tabs
+                tabLink.classList.add('active');
+            }
+        }
+    });
+</script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
