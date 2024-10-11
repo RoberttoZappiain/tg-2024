@@ -1,7 +1,5 @@
 /* Import Bootstrap CSS */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
-/*VARIABLES TG*/
 :root {
     --tg-color-primary-red: #E10600;
     --tg-color-seccond-red: #AF231C;
@@ -624,8 +622,7 @@ a {
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-Bold.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-Bold.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -656,8 +653,7 @@ a {
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-Light.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-Light.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -672,8 +668,7 @@ a {
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-Medium.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-Medium.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -688,40 +683,35 @@ a {
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-Regular.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-Regular.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-SemiBold.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-SemiBold.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-SemiBoldIt.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-Thin.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-Thin.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/fonts/proxima-nova/ProximaSoft-ThinIt.otf') format('opentype'),
-        url('/fonts/proxima-nova/ProximaSoft-ThinIt.ttf') format('truetype');
+    src: url('/fonts/proxima-nova/ProximaSoft-ThinIt.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
 }
@@ -779,12 +769,10 @@ a {
     height: 100px;
     width: 100%;
     background-image: url('/media/Banner_1024x2837_b.webp');
-
-    /* background-image: url('C:\Users\USER\tg2024\public\media\services_img\Banners-rayito_1024x2837.webp'); */
     /* Reemplaza con la ruta de tu imagen */
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: contain;
 }
 

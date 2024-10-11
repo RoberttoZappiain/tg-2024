@@ -1,76 +1,95 @@
 @include('welcome')
-<div class="container mt-5">
-    <div class="row ">
-        <h1 class="fw-bold text-shadow text-secondary ms-3">MULTIMEDIA Y REDES SOCIALES</h1>
-        <h6 class="fw-regular ms-3">¡Acércate y navega! En nuestro canal de YouTube.</h6>
-        <div class="d-flex col-md-8">
-            <div class="row m-2">
+<div class="container-fluid mt-5 p-0">
+    <div class="video-container position-relative" style="height: 70vh;">
+        <video class="w-100 h-100" autoplay muted loop>
+            <source src="{{asset('videos/INTRO_NEW_24.mp4')}}" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+</div>
+<div class="container mt-3">
+    <div class="row p-2">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('home.show') }}">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active d-flex" aria-current="page">Multimedia</li>
+                </ol>
+            </nav>
+            <h1 class="text-dark fs-1 fw-bold">MULTIMEDIA Y REDES SOCIALES</h1>
+            <span class="lh-normal fs-5">¡Acércate y navega! En nuestro canal de YouTube.</span>
+            <hr class="border border-1 opacity-50 rounded-4 w-50 my-3">
+        </div>
+        <div class="col-md-8">
+            <div class="row">
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/QGuL_KihQVc?si=3QhtaEutikOKP0dB&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/QGuL_KihQVc?si=3QhtaEutikOKP0dB&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/K1d27LQnUYE?si=wFc2QRjLYFiNDZyQ&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/K1d27LQnUYE?si=wFc2QRjLYFiNDZyQ&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/DjkJkTiXYu4?si=nFj8B56Tch3GWYJ4&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/DjkJkTiXYu4?si=nFj8B56Tch3GWYJ4&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/3ZJ86FRqwNo?si=ZBSrjviS693qmZk8&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/3ZJ86FRqwNo?si=ZBSrjviS693qmZk8&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/clXnUzGZIx4?si=bTFC_mVkzHFNeV4z&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/clXnUzGZIx4?si=bTFC_mVkzHFNeV4z&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/ajdq6mNmzCc?si=dLn79xoOG1iG-PB5&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/ajdq6mNmzCc?si=dLn79xoOG1iG-PB5&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/QV8LQDuAdH8?si=b-xSPDpfTxMAOd1b&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/QV8LQDuAdH8?si=b-xSPDpfTxMAOd1b&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/A0n8pY1gMSI?si=ghvAb_VtAnFiC8qG&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/A0n8pY1gMSI?si=ghvAb_VtAnFiC8qG&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/bri-XcnAiJA?si=oGnMYLwynGjFn4gl&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/bri-XcnAiJA?si=oGnMYLwynGjFn4gl&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="col-6 p-2">
                     <iframe class="iframe-tg"
-                        src="https://www.youtube.com/embed/hSXjDsYA7vw?si=W9MgxjZVzdmGlAZA&amp;controls=0"
+                        src="https://www.youtube-nocookie.com/embed/hSXjDsYA7vw?si=W9MgxjZVzdmGlAZA&amp;controls=0"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -100,7 +119,7 @@
                 </div>
             </div>
             <div class="">
-                <span class="fw-regular fs-6 ">  
+                <span class="fw-regular fs-6 lh-lg ">
                     ¿Te interesa conocer más acerca de quiénes somos y lo que desarrollamos?
                     Aquí podrás encontrar contenido de calidad sobre las características de nuestros productos: <br>
                     ▸Tierras físicas. <br>
@@ -108,8 +127,8 @@
                     ▸Telemetría y Control Total View. <br>
                     ▸Regulación y respaldo.<br></span>
             </div>
-            
-            <div class="d-flex flex-row my-3 justify-content-center">                
+
+            <div class="d-flex flex-row my-3 justify-content-center">
                 <div class="px-4 py-2 bg-primary rounded-2 text-center ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 448 512" width="20px"
                         height="20px" class="">
@@ -136,7 +155,9 @@
                 </div>
 
             </div>
-            
+
         </div>
     </div>
+    @include('carousel')
 </div>
+@include('footer')

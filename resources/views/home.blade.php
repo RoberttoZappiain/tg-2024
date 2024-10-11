@@ -52,7 +52,7 @@
                     <!-- Primera Fila -->
                     <ul class="row list-unstyled justify-content-center">
                         @foreach($familias as $familia)
-                        <li class="col-6 col-md-6 col-lg-{{ $loop->last ? '6' : '2' }} my-3">
+                        <li class="col-6 col-md-6 col-lg-{{ $loop->last ? '7' : '2' }} my-3">
                             <a href="{{ route('familias.showFamilia', ['slug' => $familia->slug]) }}" class="text-decoration-none">
                                 <div class="menu-item_s bg-body-tertiary text-center">
                                     <div class="menu-content">
@@ -67,7 +67,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row py-5 mt-5">
+            <div class="row py-5 mt-5 rounded-3 my-5" style="background-color: #f0f0f0">
                 <div class="col-12 ">
                     <h2 class="fw-bolder fs-2 my-2 text-start text-dark">Productos Destacados</h2>
                     <span class="fw-light fs-6 text-start text-dark">Contamos con una gran cantidad de soluciones.</span>
@@ -106,9 +106,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row py-5 mt-5 bg-secondary-subtle rounded-3">
-                <div class="col-12 col-md-6 ">
-                    <div class="faq-left">
+            <div class="row p-3 bg-secondary-subtle rounded-3">
+                <div class="col-12 col-lg-6 faq-left">
                         <div class="line-text">
                             <hr>
                             <span class="fs-5 fw-medium h3_s">Capacitaciones</span>
@@ -121,9 +120,8 @@
                         <div class="d-grid">
                             <button class="btn btn-secondary btn-block">Da click aqui para ver más informacion</button>
                         </div>
-                    </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-lg-6 py-3">
                     <div class="card shadow-lg d-flex flex-row overflow-hidden" style="border-radius: 20px;">
                         <!-- Left Section -->
                         <div class="d-flex flex-column justify-content-between p-4 text-white bg-red-intenso"
@@ -148,11 +146,11 @@
                 </div>
 
             </div>
-            <div class="row px-2 py-5 mt-5 custom-grid">
+            <div class="row p-3 mt-5 custom-grid">
                 <div class="col-12 col-lg-5">
                     <h2 class="fw-bold fs-2">¿QUE HACEMOS?</h2>
-                    <span>Nos dedicamos al desarrollo y fabricación de soluciones integrales para 5 de los sectores más
-                        importantes de la industria</span>
+                    <p class="fw-regular">Nos dedicamos al desarrollo y fabricación de soluciones integrales para 5 de los sectores más
+                        importantes de la industria</p>
                     <hr class="border border-primary border-3 opacity-75 ">
                 </div>
                 <div class="col-12 col-lg-7 ">
@@ -199,7 +197,7 @@
                         estándares de calidad, entre nuestras líneas de productos contamos con:</h3>
                 </div>
                 <div class="col-md-6">
-                    <ul class="custom-list">
+                    <ul class="custom-list fs-5">
                         <li>Sistemas de tierras físicas.</li>
                         <li>Sistemas de pararrayos.</li>
                         <li>Supresores de picos transitorios.</li>
@@ -210,7 +208,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <ul class="custom-list">
+                    <ul class="custom-list fs-5">
                         <li>UPS (Uninterruptible Power Supply).</li>
                         <li>Torres arriostradas.</li>
                         <li>Torres de iluminación.</li>
@@ -221,7 +219,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row px-5 py-5 d-flex justify-content-center bg-items-menu-rows">
+            <div class="row p-3 rounded-3 my-5 bg-secondary-subtle">
                 <div class="col-12 col-md-6 ">
                     <div class="faq-left">
                         <div class="line-text">
@@ -308,14 +306,31 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="custom-accordion-item">
+                                    <h2 class="custom-accordion-header">
+                                        <button class="custom-accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target=""
+                                            aria-expanded="false" aria-controls="customCollapseThree">
+                                            Resuelve todas tus dudas aquí
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="24"
+                                                height="24">
+                                                <path class="icon-bg-arrow"
+                                                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </h2>
+
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row bg-items-menu bg-white my-3">
+            <div class="row my-3">
                 <div class="parallax"></div>
-                <div class="d-flex flex-column flex-md-row justify-content-center p-0">
+                <div class="d-flex flex-column flex-md-row justify-content-center">
 
                     {{-- <div class="col-12 col-md-4">
                     <div class="image-container invisible-toggle-img">
@@ -379,72 +394,38 @@
                 </div> --}}
                 </div>
                 <div class="parallax"></div>
-            </div>
-            <div class="row p-0 m-0">
-                <div class="col-12 p-0 position-relative">
+                <div class="col-12 p-0 position-relative mt-3">
                     <img src="{{ 'media/services_img/Presencia-Internacional.jpg' }}" alt=""
-                        class="object-fit-cover" style="height: 650px; width:100%">
-                    <div class="d-flex align-items-center justify-content-end position-absolute top-0 end-0 text-white fw-bold p-3 overlay-content"
+                        class="object-fit-cover" style="height: 350px; width:100%">
+                    <div class="d-flex align-items-center justify-content-center position-absolute top-50 end-0 text-white fw-bold  overlay-content"
                         style="width: 100%;">
-                        <div class="me-5">
-                            <h6 class="h2 text-white fw-bold text-md-start">PRESENCIA DE MARCA</h6>
-                            <span class="fs-6 fw-light lh-sm">
-                                Con oficinas corporativas, planta de producción en Zapopan, Jalisco, oficinas de atención de
-                                CDMX y especialistas técnicos en las principales ciudades del país mediante lo cual damos
-                                atención a lo largo y ancho de la república mexicana.
-                                <span class="">Contamos con cobertura en todo el país mediante nuestros
-                                    distribuidores autorizados
-                                    quienes
-                                    nos ayudan a llevar nuestras soluciones hasta donde sean requeridos.
-                                    Exportamos nuestras soluciones a más de 12 países del centro y Sudamérica así como a
-                                    Estados
-                                    Unidos y Canadá.</span> <br> <br>
-                            </span>
-                            <h2 class="text-white fw-bold text-md-start d-none d-lg-block">NUESTRA FILOSOFÍA DE NEGOCIO
-                            </h2>
-                            <span class="fs-6 fw-light lh-sm text-start d-none d-lg-block">
-                                En Total Ground suministramos productos y servicios de alta calidad elaborados bajo los
-                                parámetros de ingeniería más estrictos y avanzados, estamos comprometidos con el cambio
-                                permanente que implica innovar, y con la creación de valor que buscamos al ofrecer mejores
-                                productos y servicios a nuestros clientes que satisfagan sus necesidades y excedan sus
-                                expectativas. <br>
-                                ▸ Creamos relaciones de negocio a largo plazo, productivas para ambas partes basadas en la
-                                lealtad al canal. <br>
-                                ▸ Apoyamos a nuestros canales de distribución quienes facilitan la llegada de nuestros
-                                productos al usuario final. <br>
-                                ▸ Nos comprometemos a entregar lo mejor de nuestros productos, con el mejor tiempo de
-                                entrega al mejor costo.
-                            </span>
+                        <div class="d-grid gap-2">
+                            <h6 class="h2 text-white fw-bold text-md-center">PRESENCIA DE MARCA Y NUESTRA FILOSOFÍA DE NEGOCIO</h6>
+                            <a href="" class="btn btn-dark mx-3">Leer más</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-6 p-0 m-3 ratio-21x9">
 
-                    <iframe width="100%" height="550"
-                        src="https://www.youtube.com/embed/clXnUzGZIx4?si=5TIdNgGxjLVmNHyh&amp;controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="rounded-4"></iframe>
-                </div>
-                <div class="col-12 col-lg-5">
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
                     <div class="line-text mt-2">
                         <hr>
-                        <span class="fs-3 fw-medium h3_s">Multimedia</span>
+                        <span class="fs-5 fw-medium h3_s">Multimedia</span>
                     </div>
-                    <h2 class="fw-bold fs-2 text-secondary">Total Ground</h2>
+                    <h2 class="fw-bold fs-2 text-dark">Total Ground</h2>
                     <span class="fw-medium fs-4 text-dark">Conoce más acerca de nuestra empresa y productos a través del
                         canal de video Total Ground en Youtube. <br>
 
                         En estos videos, podrás ver temas relacionados como:</span>
-                    <ul class="custom-list fs-5 my-5 text-dark fw-medium">
+                    <ul class="custom-list fs-5 my-2 text-dark fw-medium">
                         <li class="my-2">Tierras Fisicas</li>
                         <li class="my-2">Pararrayos</li>
                         <li class="my-2">Telemetria y Control Total View</li>
                         <li class="my-2">Regulacion y respaldo</li>
                     </ul>
-                    <div class="d-grid gap-2 col-6 my-3">
+                    <div class="d-grid gap-2 col-12 my-1">
                         <button class="btn btn-red-darks btn-sm fs-5 rounded-2">Conoce Más <svg
                                 xmlns="http://www.w3.org/2000/svg" height="15px" fill="white"
                                 viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -453,6 +434,14 @@
                             </svg></button>
                     </div>
                 </div>
+                <div class="col-12 col-lg-8 p-3">
+                    <iframe width="100%" height="550"
+                        src="https://www.youtube-nocookie.com/embed/clXnUzGZIx4?si=5TIdNgGxjLVmNHyh&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="rounded-4"></iframe>
+                </div>
+
             </div>
         </div>
     </div>
@@ -491,55 +480,6 @@
 
         // Automatically move to the next slide every 3 seconds
         setInterval(autoSlide, 3000);
-    </script>
-    <script>
-        var captions = [{
-                title: "IoT",
-                text: "Descubre las soluciones que tenemos para la industria tecnologia 4.0"
-            },
-            {
-                title: "Second slide label",
-                text: "Imagenes de caracter ilustrativo, para mas informacion consulte a un asesor."
-            },
-            {
-                title: "Third slide label",
-                text: "Imagenes de caracter ilustrativo, para mas informacion consulte a un asesor."
-            }
-        ];
-
-        var currentCaption = 0;
-
-        function changeCaption(index) {
-            currentCaption = index;
-            document.getElementById('carouselCaption1').classList.add('d-none');
-            document.getElementById('carouselCaption2').classList.add('d-none');
-            document.getElementById('carouselCaption3').classList.add('d-none');
-
-            document.getElementById('carouselCaption' + (index + 1)).classList.remove('d-none');
-            document.getElementById('carouselText').innerText = captions[index].text;
-            var indicators = document.querySelectorAll('.carousel-indicators button');
-            indicators.forEach(function(indicator, idx) {
-                indicator.classList.toggle('active', idx === index);
-            });
-        }
-
-        function prevCaption() {
-            currentCaption = (currentCaption === 0) ? captions.length - 1 : currentCaption - 1;
-            changeCaption(currentCaption);
-        }
-
-        function nextCaption() {
-            currentCaption = (currentCaption === captions.length - 1) ? 0 : currentCaption + 1;
-            changeCaption(currentCaption);
-        }
-
-        // Initialize the first caption
-        changeCaption(0);
-
-        // Automatically cycle through captions
-        setInterval(function() {
-            nextCaption();
-        }, 5000); // Change caption every 3 seconds
     </script>
 
 @endsection

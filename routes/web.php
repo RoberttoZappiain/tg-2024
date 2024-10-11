@@ -13,6 +13,7 @@ use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\ProteccionController;
 use App\Http\Controllers\RespaldoRegulacionController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\ManualesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,7 @@ Route::get('/respaldo-regulacion-ups/{slug}', [RespaldoRegulacionController::cla
 Route::get('/respaldo-regulacion-reguladores', [RespaldoRegulacionController::class, 'indexReguladores'])->name('respaldo_regulacion.reguladores.index');
 Route::get('/respaldo-regulacion-reguladores/{slug}', [RespaldoRegulacionController::class, 'showReguladores'])->name('respaldo_regulacion.reguladores.show');
 
+Route::get('/manuales', [ManualesController::class, 'show'])->name('manuales.show');
 Route::get('/{table}', [GeneralController::class, 'index'])->name('general.index');
 Route::get('/{table}/{slug}', [GeneralController::class, 'show'])->name('general.show');
 

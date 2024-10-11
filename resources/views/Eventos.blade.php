@@ -9,8 +9,16 @@
 </div>
     <div class="container mt-3">
         <div class="row d-flex">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('home.show') }}">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active d-flex" aria-current="page">Eventos</li>
+                </ol>
+            </nav>
             <div class="col-md-5">
-                <h1 class="text-shadow">Eventos Disponibles</h1>
+                <h1 class="text-dark fs-1 fw-bold">EVENTOS DISPONIBLES</h1>
                 <h5 class="text-secondary fw-regular lh-1">Consulta la agenda de las siguientes capacitaciones.</h5>
                 <hr class="border border-primary border-1 opacity-75 me-5 rounded-4">
                 <span>Para brindarte un mejor servicio y permanecer a la vaguardia, aquí puedes mantenerte enterado de <span
@@ -29,7 +37,7 @@
                         <!-- Filas dinámicas se añadirán aquí -->
                     </tbody>
                 </table>
-                <!-- Contenedor para la lista de eventos -->                
+                <!-- Contenedor para la lista de eventos -->
             </div>
             <div class="col-md-7 p-2 mt-3">
                 <div id= "calendar" class="mx-5 shadow-lg p-3 mb-2 bg-white rounded"></div>

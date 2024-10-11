@@ -232,7 +232,7 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button accordion-button-disabled collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#flush-collapseVI" aria-expanded="false"
-                        aria-controls="flush-collapseThree">
+                        aria-controls="flush-collapseThree" href="{{ route('manuales.show') }}">
                         Manuales
                     </button>
                 </h2>
@@ -350,7 +350,7 @@
                     href="{{ route('Eventos.show') }}">Eventos</a>
                 <a class="text-links {{ isActiveRoute('Multimedia.show') }}"
                     href="{{ route('Multimedia.show') }}">Multimedia</a>
-                <a class="text-links">Manuales</a>
+                <a class="text-links" {{ isActiveRoute('manuales.show') }} href="{{ route('manuales.show') }}">Manuales</a>
             </ul>
             <div class="p-2">
                 <ul class="list-group list-group-horizontal nav">
