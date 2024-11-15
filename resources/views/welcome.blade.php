@@ -14,8 +14,7 @@
 
 </head>
 
-<body style="">
-
+<body>
     @include('navbar')
     <div id="app">
         <div class="content">
@@ -88,6 +87,34 @@
             body.addEventListener('click', function(e) {
                 e.stopPropagation();
             });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            console.log("entro");
+            // Captura el evento de clic en enlaces con clase `ajax-link`
+            $('.ajax-link').click(function(event) {
+                event.preventDefault();
+
+                let url = $(this).attr('href'); // URL del enlace
+                $('#preloader').show(); // Muestra el preloader
+
+                // Realiza la solicitud AJAX
+                $.get(url, function(data) {
+                    // Inserta el contenido de la respuesta en el contenedor .content
+                    $('#app .content').html($(data).find('.content').html());
+                }).done(function() {
+                    $('#preloader').hide(); // Oculta el preloader al terminar
+                });
+
+                // Actualiza la URL en la barra de direcciones sin recargar
+                history.pushState(null, '', url);
+            });
+
+            // Maneja el botón de retroceso en el navegador
+            window.onpopstate = function() {
+                location.reload(); // Recarga la página si se usa el botón de retroceso
+            };
         });
     </script>
     </body>

@@ -1,4 +1,4 @@
-<div class="d-lg-none">
+<div class="d-lg-none fixed-top">
     <div class=" bg-secondary-subtle d-flex flex-column justify-content-center align-items-center py-4"
         style="height: 65px">
         <div class="d-flex justify-content-center align-items-center">
@@ -70,6 +70,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <a class="accordion-button accordion-button-disabled collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                        aria-controls="flush-collapseOne" href="{{ route('home.show') }}">
+                        Inicio
+                    </a>
+                </h2>
+            </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <a class="accordion-button accordion-button-disabled collapsed" type="button"
@@ -342,97 +351,21 @@
         </a>
         <div class="d-flex flex-column py-1">
             <ul class="list-group list-group-horizontal">
-                <a class="text-links {{ isActiveRoute('quienes-somos.show') }}"
-                    href="{{ route('quienes-somos.show') }}">Empresa</a>
-                <a class="text-links {{ isActiveRoute('CCAD.show') }}"
-                    href="{{ route('CCAD.show') }}">Capacitaciónes</a>
-                <a class="text-links {{ isActiveRoute('Eventos.show') }}"
-                    href="{{ route('Eventos.show') }}">Eventos</a>
-                <a class="text-links {{ isActiveRoute('Multimedia.show') }}"
-                    href="{{ route('Multimedia.show') }}">Multimedia</a>
-                <a class="text-links" {{ isActiveRoute('manuales.show') }} href="{{ route('manuales.show') }}">Manuales</a>
+                <a class="text-links {{ isActiveRoute('home.show') }} ajax-link"
+                href="{{ route('home.show') }} ">Inicio</a>
+                <a class="text-links {{ isActiveRoute('quienes-somos.show') }} ajax-link"
+                    href="{{ route('quienes-somos.show') }} ">Empresa</a>
+                <a class="text-links {{ isActiveRoute('CCAD.show') }} ajax-link"
+                    href="{{ route('CCAD.show') }} ">Capacitaciónes</a>
+                <a class="text-links {{ isActiveRoute('Eventos.show') }} ajax-link"
+                    href="{{ route('Eventos.show') }} ">Eventos</a>
+                <a class="text-links {{ isActiveRoute('Multimedia.show') }} ajax-link"
+                    href="{{ route('Multimedia.show') }} ">Multimedia</a>
+                <a class="text-links ajax-link" {{ isActiveRoute('manuales.show') }} href="{{ route('manuales.show') }}">Manuales</a>
             </ul>
-            <div class="p-2">
+            <div class="p-2 justify-content-end d-flex">
                 <ul class="list-group list-group-horizontal nav">
-                    <li class="nav-item dropdown">
-                        <a class="btn btn-dark dropdown-toggle custom-dropdown bg-transparent border-0" href="#"
-                            id="mainDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Servicios
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="dropdown-icon">
-                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                <path
-                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                        </a>
-                        <ul class="dropdown-menu rounded-4 border-0" aria-labelledby="mainDropdownMenuButton">
-                            <div class="accordion accordion-flush" data-bs-theme="dark" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-lev') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Levantamientos
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-proyect') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Diseño de Proyectos
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-calcu') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Calculos de Proyectos
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-medicion') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Toma de Mediciones de entrega de obra
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-resis') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Estudios de Resisitividad de Terreno
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-inst') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Análisis de Puntos de Riesgo en Instalaciones E.
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-energy') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Elaboración de Proyectos de Ahorro de Energía
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <a href="{{ url('servicios/levantamientos?tab=list-ec') }}"
-                                            class="accordion-button collapsed no-icon">
-                                            Estudios de Calidad de Energia
-                                        </a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="btn btn-dark dropdown-toggle custom-dropdown bg-transparent border-0" href="#"
                             id="mainDropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -531,6 +464,12 @@
                                 </div>
                             </div>
                         </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-dark dropdown-toggle custom-dropdown bg-transparent border-0" href="{{url('/servicios')}}?tab=list-lev">
+                            Servicios
+                        </a>
+
                     </li>
                     <li type="button" class="text-links btn-contact sh-r rounded" data-bs-toggle="modal"
                         data-bs-target="#myModal">CONTACTANOS</li>

@@ -51,7 +51,7 @@
 
                                 </div>
                                 <div>
-                                    <h6 class="fs-5 mb-0">Filtrar Por Categoria:</h6>
+                                    <h6 class="fs-6 mb-0">Categorias</h6>
                                 </div>
                             </div>
 
@@ -73,7 +73,7 @@
                                         @else
                                             <!-- Redirigir al enlace original si productos_count es mayor que 0 -->
                                             <a href="?subcategoria={{ $subcategoria->slug }}"
-                                                class="text-decoration-none {{ $activeSubcategoria == $subcategoria->slug ? 'active-filter' : '' }}">
+                                                class="text-decoration-none {{ $activeSubcategoria == $subcategoria->slug ? 'active-filter' : '' }} zoom-img-category">
                                                 {{ $subcategoria->nombre }} <!-- Muestra el nombre de la subcategoría -->
                                             </a>
                                         @endif

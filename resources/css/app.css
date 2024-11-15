@@ -332,7 +332,7 @@ a {
     position: relative;
     display: block;
     padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
-    text-decoration: none;
+    text-decoration: underline var(--tg-color-marron-rojizo-oscuro);
 
 }
 
@@ -404,10 +404,6 @@ a {
     /* Cambia el color de las líneas al color blanco */
     content: '';
     transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.bgs {
-    background-color: var(--tg-color-gris-claro) !important;
 }
 
 .accordion-button-disabled::after {
@@ -1072,21 +1068,33 @@ body {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: #fff;
-    display: flex;
+    background: rgba(255, 255, 255); /* Fondo translúcido */
+    display: flex; /* Cambiado de none a flex */
     justify-content: center;
     align-items: center;
 }
 
 .spinner {
-    border: 16px solid #f3f3f3;
-    /* Light grey */
-    border-top: 16px solid #4b0e0e;
-    /* Color of the spinner */
-    border-radius: 50%;
     width: 120px;
     height: 120px;
+    border-radius: 50%;
+    background-image: url('/media/icons/25badge.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     animation: spin 2s linear infinite;
+}
+nav {
+    position: relative;
+    z-index: 10000;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .custom-card {
@@ -1202,14 +1210,16 @@ body {
     border-color: var(--tg-color-black);
     /* Borde azul para los eventos */
     color: var(--tg-color-gris-claro);
-    ;
     /* Color de texto blanco para los eventos */
 }
 
-.content {
-    /* Inicialmente asigna un margen top */
-    margin-top: 145px;
-    /* Ajusta este valor según la altura de tu navbar */
+
+@media screen and (min-width: 560px){
+    .content {
+        /* Inicialmente asigna un margen top */
+        margin-top: 150px;
+        /* Ajusta este valor según la altura de tu navbar */
+    }
 }
 
 /* Puedes agregar más estilos según sea necesario */
@@ -1483,7 +1493,7 @@ body {
     flex-grow: 0;
     /* Ajusta el comportamiento de flexbox si quieres una línea fija */
     border: none;
-    border-top: 2px solid #ff0000;
+    border-top: 2px solid var(--tg-color-rojo-oscuro);
     /* Ajusta el color de la línea */
     margin: 0 10px 0 0;
     /* Ajusta el espacio alrededor del texto */
@@ -1597,12 +1607,12 @@ body {
     line-height: 30px;
     text-align: center;
     border-radius: 50%;
-    background: #343a40;
+    background: var(--tg-color-rojo-oscuro);
     color: #fff;
     z-index: 2;
   }
   .list-group-item.active{
-    background-color: var(--tg-color-marron-rojizo-oscuro);
+    background-color: var(--tg-color-rojo-oscuro);
   }
   .carrousel_services_tg-container {
     position: relative;
@@ -1727,4 +1737,124 @@ body {
     min-width: auto; /* Asegura que el menú no tenga un ancho mínimo que lo desplace */
     right: 0; /* Alinea el menú con el botón de la derecha */
     left: auto; /* Asegura que no haya desplazamiento hacia la izquierda */
+}
+.carousel-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+.carousel-image:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+}
+.carousel-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.carousel-content .badge {
+    font-size: 1rem;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.carousel-content h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.carousel-content p {
+    font-size: 1.2rem;
+}
+
+/* Contenedor del flipbook */
+#flipbook {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilos de la página */
+.page {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Estilos del canvas */
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Estilos de los botones */
+.controls {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.controls button {
+    background-color: white;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 18px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.controls button i {
+    color: black;
+}
+
+.controls button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    #flipbook {
+        max-width: 100%;
+        max-height: 500px;
+    }
+
+    .controls button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #flipbook {
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .controls button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+.bg-grid-logos {
+    border: 5px solid white;
+    border-radius: 7px;
 }

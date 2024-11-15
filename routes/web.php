@@ -39,6 +39,7 @@ Route::get('/proteccion/{categoria_slug}/{subcategoria_slug}/{slug}', [Proteccio
 Route::get('/proteccion/sistemas-tierra-fisica', [CategoryController::class, 'index'])->name('categorias.index');
 Route::get('/', [HomeController::class, 'show'])->name('home.show');
 Route::get('/nosotros', [QuienesSomosController::class, 'show'])->name('quienes-somos.show');
+Route::get('/servicios', [ServiciosController::class, 'levantamientos']);
 // Ruta más específica primero
 Route::get('/familias/{categoria_slug}/{subcategoria_slug}/{slug}', [GeneralController::class, 'show'])->name('familias.show');
 // Ruta con dos segmentos en segundo lugar
@@ -50,7 +51,6 @@ Route::get('/Eventos', [EventosController::class, 'show'])->name('Eventos.show')
 Route::get('/Multimedia', [MultimediaController::class, 'show'])->name('Multimedia.show');
 // Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 // Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
-Route::get('/servicios/levantamientos', [ServiciosController::class, 'levantamientos']);
 
 Route::get('/pararrayos', [App\Http\Controllers\CategoryController::class, 'indexPararrayos'])->name('pararrayos.index');
 

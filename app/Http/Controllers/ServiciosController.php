@@ -10,6 +10,6 @@ class ServiciosController extends Controller
     public function levantamientos()
     {
         $logos = DB::table('logos_familia_tg')->get();
-        return view('servicios.levantamientos', ['logos'=> $logos]);
+        return view('servicios', ['logos'=> $logos]);
     }
 }

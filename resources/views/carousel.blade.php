@@ -1,9 +1,9 @@
 
-<div id="logoCarousel" class="logo-carousel-container bgs mb-3 rounded-3">
-    <div class="logo-carousel-inner">
+<div id="logoCarousel" class="logo-carousel-container bg-white mb-3 rounded-4">
+    <div class="logo-carousel-inner py-5 px-4">
         @foreach($logos as $index => $logo)
             <div class="logo-carousel-item">
-                <img src="{{ asset($logo->logo_path) }}" class="d-block w-100 p-5 " alt="Logo">
+                <img src="{{ asset($logo->logo_path) }}" class="d-block w-100 h-100" alt="producto">
             </div>
         @endforeach
     </div>
@@ -45,7 +45,7 @@
         items[i].classList.add('active', 'slide-in-blurred-bottom');
     }
 
-    setInterval(showNextItem, 4000); // Cambia el conjunto de imágenes cada 4 segundos
+    setInterval(showNextItem, 2000); // Cambia el conjunto de imágenes cada 4 segundos
 });
 
 </script>

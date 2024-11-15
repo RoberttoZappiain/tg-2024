@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\CarruselImagene;
 use App\Models\Familia; // Importa el modelo de Familias
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,8 +14,11 @@ class HomeController extends Controller
         $imagenes = CarruselImagene::where('estado', 'activo')->orderBy('orden', 'asc')->get();
 
         // Obtener todas las familias
-        $familias = Familia::all(); // Obtén todos los registros de la tabla 'familias'
+        $familiasFirst = Familia::orderBy('indice', 'asc')->take(5)->get();
+        $familiasLast = Familia::orderBy('indice', 'asc')->skip(5)->take(5)->get();
+
+        $logos = DB::connection('mysql')->table('logos_familia_tg')->get();
 
         // Pasar las imágenes a la vista home
-        return view('home', compact('imagenes', 'familias'));    }
+        return view('home', compact('imagenes', 'familiasFirst', 'familiasLast', 'logos'));    }
 }

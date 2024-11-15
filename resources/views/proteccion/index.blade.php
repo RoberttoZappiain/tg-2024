@@ -30,8 +30,6 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 min-vh-80 bg-secondary-subtle rounded-3">
-
-
                             <ul class="list-group mt-3">
                                 <div class="d-flex align-items-center p-3 rounded bg-light">
                                     <div class="me-3">
